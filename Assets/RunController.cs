@@ -355,6 +355,13 @@ public class RunController : MonoBehaviour
 		}
 	}
 
+	public GameObject SpawnPlusPoints()
+	{
+		GameObject obj = Utilities.InsGobj(Resources.Load<GameObject>("UITextPopup"), Game.RUCInstance.UILayers[0].transform);
+		obj.transform.localPosition = new Vector3(UnityEngine.Random.Range(-27f, 50f), UnityEngine.Random.Range(-12f, -26f), -3.6f);
+		return obj;
+	}
+
 	public void Shoot()
 	{
 		if (MC.guy.GetComponent<HumanStats>().isLaser)
@@ -374,7 +381,7 @@ public class RunController : MonoBehaviour
 		if (!MC.guy.GetComponent<HumanStats>().isShotgun)
 		{
 			RunPoints += Resources.Load<GameObject>("guns/" + myGun).GetComponent<WeaponStats>().damage;
-			Utilities.InsGobj(Resources.Load<GameObject>("pluspoints"), MC.plusPointsPos[UnityEngine.Random.Range(0, MC.plusPointsPos.Length)]).GetComponent<TextMesh>().text = "+" + MC.guy.GetComponent<HumanStats>().weapon.GetComponent<WeaponStats>().damage;
+			SpawnPlusPoints().GetComponentInChildren<TextMesh>().text = "+" + MC.guy.GetComponent<HumanStats>().weapon.GetComponent<WeaponStats>().damage;
 			if (CurrentZombieHealth > 0f)
 			{
 				CurrentZombieHealth -= Resources.Load<GameObject>("guns/" + myGun).GetComponent<WeaponStats>().damage;
@@ -387,7 +394,7 @@ public class RunController : MonoBehaviour
 		else
 		{
 			float the = UnityEngine.Random.Range(Resources.Load<GameObject>("guns/" + myGun).GetComponent<WeaponStats>().randomDamage.x, Resources.Load<GameObject>("guns/" + myGun).GetComponent<WeaponStats>().randomDamage.y);
-			Utilities.InsGobj(Resources.Load<GameObject>("pluspoints"), MC.plusPointsPos[UnityEngine.Random.Range(0, MC.plusPointsPos.Length)]).GetComponent<TextMesh>().text = "+" + Math.Round(the);
+			SpawnPlusPoints().GetComponentInChildren<TextMesh>().text = "+" + Math.Round(the);
 			RunPoints += the;
 			if (CurrentZombieHealth > 0f)
 			{
@@ -527,6 +534,13 @@ public class RunController : MonoBehaviour
 
 	public void LoadBackToMenu()
 	{
+		foreach(AudioSource AS in Resources.FindObjectsOfTypeAll<AudioSource>())
+		{
+			if (AS.name != "LoadingUI")
+			{
+				AS.enabled = false;
+			}
+		}
 		Game.RUCInstance.LoadingUI.SetActive(true);
 		Game.RUCInstance.DoTheLoad("menu");
 		Game.RUCInstance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
@@ -1763,14 +1777,14 @@ public class RunController : MonoBehaviour
 		}
 		string str = (eliteZombie) ? "elite_" + myZombie : myZombie;
 		RunPoints += Resources.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().deathPoints;
-		Utilities.InsGobj(Resources.Load<GameObject>("pluspoints"), MC.plusPointsPos[UnityEngine.Random.Range(0, MC.plusPointsPos.Length)]).GetComponent<TextMesh>().text = "+" + MC.zombie.GetComponent<ZombieStats>().deathPoints;
+		SpawnPlusPoints().GetComponentInChildren<TextMesh>().text = "+" + MC.zombie.GetComponent<ZombieStats>().deathPoints;
 		MC.zombie.transform.parent = deadZombieZone;
 		MC.zombie.GetComponent<Animation>().Play("Death01");
 		audioCon.PlayClip(MC.zombie.GetComponent<ZombieStats>().deathSound, new Vector2(0.9f, 1.1f));
 		MC.zombie.GetComponent<ZombieStats>().isDead = true;
 		if (eliteZombie && myZombie == "Hunter" && Storager.GetInt("killedzombie" + myZombie) == 0)
 		{
-			Application.LoadLevel("claimPrize");
+			DoAPopup("you got a prestige token!", new Vector2(4.22f, -19.44f));
 		}
 		if (eliteZombie && Storager.GetInt("killedzombie" + myZombie) == 0)
 		{
@@ -1800,6 +1814,18 @@ public class RunController : MonoBehaviour
 			MC.DetachedCam.GetComponent<CamShake>().shake = !MC.DetachedCam.GetComponent<CamShake>().shake;
 		}
 		#endif
+		if (GameObject.Find("Laser(Clone)") && MC.guy.GetComponent<HumanStats>().isLaser && !MC.guy.GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
+		{
+			try
+			{
+				Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(GameObject.Find("Laser(Clone)")));
+			}
+			catch
+			{
+				Debug.Log("unfound");
+			}
+			Destroy(GameObject.Find("Laser(Clone)"));
+		}
 		Game.RUCInstance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth)/ 100f, 1f, 1f);
 		Game.RUCInstance.GetLabel("RPLabel").text = "" + Math.Round(RunPoints);
 		Game.RUCInstance.GetLabel("RPLabelShop").text = "" + Math.Round(RunPoints);

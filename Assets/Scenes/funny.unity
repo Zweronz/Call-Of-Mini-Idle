@@ -31578,7 +31578,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1002656811}
-  m_Text: Put text here or something
+  m_Text: You got a prestige token!
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
