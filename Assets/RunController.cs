@@ -70,11 +70,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetInt("totalunlockeditems");
+			return Storager.GetInt("totalunlockeditems");
 		}
 		set
 		{
-			PlayerPrefs.SetInt("totalunlockeditems", value);
+			Storager.SetInt("totalunlockeditems", value);
 		}
 	}
 
@@ -82,11 +82,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetInt("fov");
+			return Storager.GetInt("fov");
 		}
 		set
 		{
-			PlayerPrefs.SetInt("fov", value);
+			Storager.SetInt("fov", value);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetString("myzombie");
+			return Storager.GetString("myzombie");
 		}
 	}
 
@@ -102,11 +102,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetString("myzombie");
+			return Storager.GetString("myzombie");
 		}
 		set
 		{
-			PlayerPrefs.SetString("myzombie", value);
+			Storager.SetString("myzombie", value);
 		}
 	}
 
@@ -114,16 +114,16 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetInt("shopelitezombie") == 1;
+			return Storager.GetInt("shopelitezombie") == 1;
 		}
 		set
 		{
 			if (!value)
 			{
-				PlayerPrefs.SetInt("shopelitezombie", 0);
+				Storager.SetInt("shopelitezombie", 0);
 				return;
 			}
-			PlayerPrefs.SetInt("shopelitezombie", 1);
+			Storager.SetInt("shopelitezombie", 1);
 		}
 	}
 
@@ -131,11 +131,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetString("myhuman");
+			return Storager.GetString("myhuman");
 		}
 		set
 		{
-			PlayerPrefs.SetString("myhuman", value);
+			Storager.SetString("myhuman", value);
 		}
 	}
 
@@ -143,11 +143,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetString("mygun");
+			return Storager.GetString("mygun");
 		}
 		set
 		{
-			PlayerPrefs.SetString("mygun", value);
+			Storager.SetString("mygun", value);
 		}
 	}
 
@@ -190,7 +190,7 @@ public class RunController : MonoBehaviour
 
 	public Camera curCamera()
 	{
-		if (PlayerPrefs.GetInt("fpscam") == 0)
+		if (Storager.GetInt("fpscam") == 0)
 		{
 			return MC.DetachedCam;
 		}
@@ -202,23 +202,23 @@ public class RunController : MonoBehaviour
 
 	public bool gs(string s)
 	{
-		return PlayerPrefs.GetInt("shop" + s) == 1;
+		return Storager.GetInt("shop" + s) == 1;
 	}
 
 	public void ss(string s, int i)
 	{
-		PlayerPrefs.SetInt("shop" + s, i);
+		Storager.SetInt("shop" + s, i);
 	}
 
 	public float RunPoints
 	{
 		get
 		{
-			return PlayerPrefs.GetFloat("runpoints");
+			return Storager.GetFloat("runpoints");
 		}
 		set
 		{
-			PlayerPrefs.SetFloat("runpoints", value);
+			Storager.SetFloat("runpoints", value);
 		}
 	}
 
@@ -226,11 +226,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetFloat("rps") + RPSFromZombie + RPSFromHuman;
+			return Storager.GetFloat("rps") + RPSFromZombie + RPSFromHuman;
 		}
 		set
 		{
-			PlayerPrefs.SetFloat("rps", value + RPSFromZombie + RPSFromHuman);
+			Storager.SetFloat("rps", value + RPSFromZombie + RPSFromHuman);
 		}
 	}
 
@@ -238,11 +238,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetFloat("rpszombie");
+			return Storager.GetFloat("rpszombie");
 		}
 		set
 		{
-			PlayerPrefs.SetFloat("rpszombie", value);
+			Storager.SetFloat("rpszombie", value);
 		}
 	}
 
@@ -250,11 +250,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetFloat("rpshuman");
+			return Storager.GetFloat("rpshuman");
 		}
 		set
 		{
-			PlayerPrefs.SetFloat("rpshuman", value);
+			Storager.SetFloat("rpshuman", value);
 		}
 	}
 
@@ -262,11 +262,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetString("currentmusic");
+			return Storager.GetString("currentmusic");
 		}
 		set
 		{
-			PlayerPrefs.SetString("currentmusic", value);
+			Storager.SetString("currentmusic", value);
 		}
 	}
 
@@ -274,16 +274,16 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetInt("fpscam") == 1;
+			return Storager.GetInt("fpscam") == 1;
 		}
 		set
 		{
 			if (!value)
 			{
-				PlayerPrefs.SetInt("fpscam", 0);
+				Storager.SetInt("fpscam", 0);
 				return;
 			}
-			PlayerPrefs.SetInt("fpscam", 1);
+			Storager.SetInt("fpscam", 1);
 		}
 	}
 
@@ -291,11 +291,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetInt("levelindex");
+			return Storager.GetInt("levelindex");
 		}
 		set
 		{
-			PlayerPrefs.SetInt("levelindex", value);
+			Storager.SetInt("levelindex", value);
 		}
 	}
 
@@ -303,11 +303,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetFloat("zombiehealth");
+			return Storager.GetFloat("zombiehealth");
 		}
 		set
 		{
-			PlayerPrefs.SetFloat("zombiehealth", value);
+			Storager.SetFloat("zombiehealth", value);
 		}
 	}
 
@@ -324,11 +324,11 @@ public class RunController : MonoBehaviour
 	{
 		get
 		{
-			return PlayerPrefs.GetFloat("zombietime");
+			return Storager.GetFloat("zombietime");
 		}
 		set
 		{
-			PlayerPrefs.SetFloat("zombietime", value);
+			Storager.SetFloat("zombietime", value);
 		}
 	}
 
@@ -501,701 +501,1091 @@ public class RunController : MonoBehaviour
 		pbs();
 	}
 
-	void OnGUI()
+	public void ChangeMusic(string music)
 	{
-		if (!shopOpen)
+		if (CurrentMusic != music)
 		{
-			GUI.Label(Utilities.screenScaleRect(0.4835f, 0.0175f, 0.1f, 0.1f), "Enemy Health", font);
-			GUI.DrawTexture(Utilities.screenScaleRect(0.475f, 0.1f, Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 800f, 0.05f), testTexture);
-			GUI.DrawTexture(Utilities.screenScaleRect(0.475f, 0.1f, 0.127f, 0.052f), theThing2);
-			if (GUI.RepeatButton(Utilities.screenNoScaleRect(0.4f, 0.8f, 400f, 100f), string.Empty, button))
-			{
-				if (!MC.guy.GetComponent<HumanStats>().isShotgun && !MC.guy.GetComponent<HumanStats>().isRPG && !MC.guy.GetComponent<HumanStats>().isLaser)
-				{
-					if (!MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01"))
-					{
-						MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().Play("RunShoot01");
-					}
-				}
-				if (MC.guy.GetComponent<HumanStats>().isLaser)
-				{
-					if (!MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
-					{
-						MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().Play("RunShoot01_Laser");
-					}
-				}
-				if (MC.guy.GetComponent<HumanStats>().isShotgun)
-				{
-					if (!shotgun)
-					{
-						StartCoroutine(Shotgun());
-					}
-				}
-				if (MC.guy.GetComponent<HumanStats>().isRPG)
-				{
-					if(!rpg)
-					{
-						StartCoroutine(RPG());
-					}
-				}
-			}
-			else
-			{
-				if (GameObject.Find("Laser(Clone)") && !MC.guy.GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
-				{
-					try
-					{
-						Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(GameObject.Find("Laser(Clone)")));
-					}
-					catch
-					{
-						Debug.Log("unfound");
-					}
-					Destroy(GameObject.Find("Laser(Clone)"));
-				}
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.4765f, 0.792f, 100f, 50f), "Shoot", font2);
-			}
-			GUI.DrawTexture(Utilities.screenScaleRect(0.05f, 0.025f, 0.2f, 0.15f), header);
-			GUI.Label(Utilities.screenScaleRect(0.1035f, 0.0015f, 0.1f, 0.1f), "RunPoints", font);
-			GUI.Label(Utilities.screenScaleRect(0.1175f, 0.075f, 0.1f, 0.1f), "" + Math.Round(RunPoints), font);
-			GUI.DrawTexture(Utilities.screenScaleRect(0.25f, 0.025f, 0.2f, 0.15f), header);
-			GUI.Label(Utilities.screenScaleRect(0.3275f, 0.0015f, 0.1f, 0.1f), "RPS", font);
-			GUI.Label(Utilities.screenScaleRect(0.3175f, 0.075f, 0.1f, 0.1f), "" + RunPointsPerSecond, font);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.75f, 0.05f, 300f, 100f), string.Empty, button))
-			{
-				pbs();
-				if (!settingsOpen)
-				{
-				shopOpen = !shopOpen;
-				}
-			}
-			if (GUI.Button(Utilities.screenNoScaleRect(0.8f, 0.8f, 200f, 100f), string.Empty, settingsButton))
-			{
-				pbs();
-				if (!shopOpen)
-				{
-				settingsOpen = !settingsOpen;
-				}
+			CurrentMusic = music;
+			audioCon.ChangeClip(CurrentMusic);
 		}
-		GUI.Label(Utilities.screenNoScaleRect(0.8065f, 0.042f, 100f, 50f), "Shop", font2);
-		if (settingsOpen)
+	}
+
+	public void DoAPopup(string popupText, Vector2 textPosition)
+	{
+		Game.RUCInstance.UILayers[2].SetActive(true);
+		Game.RUCInstance.GetLabel("PopupUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
+		Game.RUCInstance.GetLabel("PopupUIText").text = popupText;
+	}
+
+	public void DoAYesNoPopup(string popupText, Vector2 textPosition, string yesFunction)
+	{
+		currentYesFunction = yesFunction;
+		Game.RUCInstance.UILayers[4].SetActive(true);
+		Game.RUCInstance.GetLabel("PopupYesNoUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
+		Game.RUCInstance.GetLabel("PopupYesNoUIText").text = popupText;
+	}
+
+	public void LoadBackToMenu()
+	{
+		Game.RUCInstance.LoadingUI.SetActive(true);
+		Game.RUCInstance.DoTheLoad("menu");
+		Game.RUCInstance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
+	}
+
+	private string currentYesFunction;
+
+	public void Buttons(string ButtonName)
+	{
+		if (Game.RUCInstance.UILayers[2].activeInHierarchy && ButtonName != "PopupButton_OK" || Game.RUCInstance.UILayers[4].activeInHierarchy && ButtonName != "PopupButton_Yes" && ButtonName != "PopupButton_No")
 		{
-			GUI.DrawTexture(Utilities.screenScaleRect(0.2f, 0.15f, 0.58f, 0.775f), bg);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.2f, 300f, 100f), string.Empty, button))
-			{
-				pbs();
-				DoTheSettingsBools(!settingsBools[0], 0);
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.275f, 0.1925f, 100f, 50f), "Music", font2);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.35f, 300f, 100f), string.Empty, button))
-			{
-				pbs();
-				DoTheSettingsBools(!settingsBools[1], 1);
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.275f, 0.3425f, 100f, 50f), "Video", font2);
-			if (settingsBools[0])
-			{
-				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
-				{
-					pbs();
-					if (CurrentMusic != "BGM1")
-					{
-					CurrentMusic = "BGM1";
-					audioCon.ChangeClip(CurrentMusic);
-					}
-				}
-				GUI.Label(Utilities.screenNoScaleRect(0.5925f, 0.195f, 100f, 50f), "COMZ BGM 1", font2);
-				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
-				{
-					pbs();
-					if (CurrentMusic != "BGM2")
-					{
-					CurrentMusic = "BGM2";
-					audioCon.ChangeClip(CurrentMusic);
-					}
-				}
-				GUI.Label(Utilities.screenNoScaleRect(0.5925f, 0.3425f, 100f, 50f), "COMZ BGM 2", font2);
-				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
-				{
-					pbs();
-					if (CurrentMusic != "MILLERINST")
-					{
-					CurrentMusic = "MILLERINST";
-					audioCon.ChangeClip(CurrentMusic);
-					}
-				}
-				GUI.Label(Utilities.screenNoScaleRect(0.6075f, 0.4925f, 100f, 50f), "Miller Inst", font2);
-			}
-			if (settingsBools[1])
-			{
-				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
-				{
-					pbs();
-					fpsCam = !fpsCam;
-					doFpsCam(fpsCam);
-				}
-				GUI.Label(Utilities.screenNoScaleRect(0.5525f, 0.1325f, 100f, 50f), "Motion Sickness Warning!", font2);
-				GUI.Label(Utilities.screenNoScaleRect(0.6025f, 0.1925f, 100f, 50f), "FPS Camera", font2);
-				if (GUI.Button(Utilities.screenNoScaleRect(0.63f, 0.35f, 75f, 75f), string.Empty, plus))
-				{
-					pbs();
-					if (FOV < 90)
-					{
-						FOV++;
-					}
-				}
-				if (GUI.Button(Utilities.screenNoScaleRect(0.68f, 0.35f, 75f, 75f), string.Empty, minus))
-				{
-					pbs();
-					if (FOV > 45)
-					{
-						FOV--;
-					}
-				}
-				GUI.Label(Utilities.screenNoScaleRect(0.5525f, 0.3425f, 100f, 50f), "FOV(" + FOV + ")", font2);
-			}
+			return;
 		}
-		if (shopOpen)
+		switch (ButtonName)
 		{
-			GUI.DrawTexture(Utilities.screenScaleRect(0.2f, 0.15f, 0.58f, 0.775f), bg);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.2f, 300f, 100f), string.Empty, button))
+			case"PopupButton_OK":
+			Game.RUCInstance.UILayers[2].SetActive(false);
+			break;
+			case"PopupButton_Yes":
+			this.SendMessage(currentYesFunction);
+			break;
+			case"PopupButton_No":
+			Game.RUCInstance.UILayers[4].SetActive(false);
+			break;
+			case"BackToMenu":
+			DoAYesNoPopup("Would you like to return to the menu?", new Vector2(-0.9f, -19.4f), "LoadBackToMenu");
+			break;
+			case"Settings":
+			Game.RUCInstance.UILayers[3].SetActive(true);
+			Game.RUCInstance.UILayers[0].SetActive(false);
+			break;
+			case"SettingsButton_Back":
+			Game.RUCInstance.UILayers[0].SetActive(true);
+			Game.RUCInstance.UILayers[3].SetActive(false);
+			break;
+			case"SettingsButton_Music":
+			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
 			{
-				pbs();
-				DoTheShopBools(!shopBools[0], 0);
-			//no
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.265f, 0.1925f, 100f, 50f), "Zombies", font2);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.35f, 300f, 100f), string.Empty, button))
-			{
-				pbs();
-				DoTheShopBools(!shopBools[1], 1);
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.275f, 0.3425f, 100f, 50f), "Skins", font2);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.5f, 300f, 100f), string.Empty, button))
-			{
-				pbs();
-				DoTheShopBools(!shopBools[2], 2);
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.26f, 0.4925f, 100f, 50f), "Weapons", font2);
-			if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.65f, 300f, 100f), string.Empty, button))
-			{
-				pbs();
-				DoTheShopBools(!shopBools[3], 3);
-			}
-			GUI.Label(Utilities.screenNoScaleRect(0.2575f, 0.6425f, 100f, 50f), "Upgrades", font2);
-			if (shopBools[3])
-			{
-				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+				if (obj.name == "MusicTab")
 				{
-					pbs();
-					bc("elitezombie", 100000);
-					if (gs("elitezombie"))
-					{
-						doZombie("Zombie", false);
-					}
-				}
-				if (gs("elitezombie"))
-				{
-					GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.195f, 100f, 50f), "Elite", font2);
+					obj.SetActive(true);
 				}
 				else
 				{
-					GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.195f, 100f, 50f), "100000", font2);
+					obj.SetActive(false);
 				}
 			}
-			if (shopBools[0])
+			break;
+			case"SettingsButton_Video":
+			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
 			{
-				if (shopIndex[0] == 0)
+				if (obj.name == "VideoTab")
 				{
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						pbs();
-						if (myZombie != "Zombie")
-						{
-							doZombie("Zombie", false);
-						}
-					}
-					GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.195f, 100f, 50f), "Zombie", font2);
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieZombie") == 1)
-						bz("dog", "Dog", 250);
-					}
-					if (gs("dog") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieZombie") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.47f, 0.3425f, 100f, 50f), "Dog", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieZombie") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4550f, 0.3425f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.3425f, 100f, 50f), "250 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieDog") == 1)
-						bz("nurse", "Nurse", 750);
-					}
-					if (gs("nurse") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieDog") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.465f, 0.4925f, 100f, 50f), "Nurse", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieDog") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.4925f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.4925f, 100f, 50f), "750 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieNurse") == 1)
-						bz("policezombie", "Zombie_Police", 1500);
-					}
-					if (gs("policezombie") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieNurse") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4325f, 0.6425f, 100f, 50f), "Police Zombie", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieNurse") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4550f, 0.6425f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.6425f, 100f, 50f), "1500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.8f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieZombie_Police") == 1)
-						bz("swatzombie", "Zombie_Swat", 2500);
-					}
-					if (gs("swatzombie") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieZombie_Police") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4355f, 0.7925f, 100f, 50f), "Swat Zombie", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieZombie_Police") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4550f, 0.7925f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "2500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieZombie_Swat") == 1)
-						bz("boomer", "Boomer", 4000);
-					}
-					if (gs("boomer") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieZombie_Swat") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6165f, 0.195f, 100f, 50f), "Boomer", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieZombie_Swat") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6150f, 0.195f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.615f, 0.195f, 100f, 50f), "4000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieBoomer") == 1)
-						bz("tank", "Tank", 7500);
-					}
-					if (gs("tank") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieBoomer") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6265f, 0.345f, 100f, 50f), "Tank", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieBoomer") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6150f, 0.345f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.345f, 100f, 50f), "7500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						if (!eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieTank") == 1)
-						bz("hunter", "Hunter", 15000);
-					}
-					if (gs("hunter") && !eliteZombie || eliteZombie && PlayerPrefs.GetInt("killedzombieTank") == 1)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "Hunter", font2);
-					}
-					else if (eliteZombie && PlayerPrefs.GetInt("killedzombieTank") == 0)
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6150f, 0.495f, 100f, 50f), "Kill Last", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.495f, 100f, 50f), "15000 RP", font2);
-					}
+					obj.SetActive(true);
+				}
+				else
+				{
+					obj.SetActive(false);
 				}
 			}
-			if (shopBools[1])
+			break;
+			case"SettingsButton_Audio":
+			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
 			{
-				if (GUI.Button(Utilities.screenNoScaleRect(0.745f, 0.15f, 50f, 100f), string.Empty, arrowRight))
+				if (obj.name == "AudioTab")
 				{
-					pbs();
-					if (shopIndex[1] < 1)
-					{
-						shopIndex[1]++;
-					}
+					obj.SetActive(true);
 				}
-				if (GUI.Button(Utilities.screenNoScaleRect(0.715f, 0.15f, 50f, 100f), string.Empty, arrowLeft))
+				else
 				{
-					pbs();
-					if (shopIndex[1] > 0)
-					{
-						shopIndex[1]--;
-					}
-				}
-				if (shopIndex[1] == 0)
-				{
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						pbs();
-						if (myHuman != "Human")
-						{
-							doHuman("Human");
-						}
-					}
-					GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.195f, 100f, 50f), "Joe Blo", font2);
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						bh("nerd", "Nerd", 150);
-					}
-					if (gs("nerd"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.465f, 0.3425f, 100f, 50f), "Nerd", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.3425f, 100f, 50f), "150 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						bh("plumber", "Plumber", 500);
-					}
-					if (gs("plumber"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.4925f, 100f, 50f), "Worker", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.4925f, 100f, 50f), "500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
-					{
-						bh("doctor", "Doctor", 1250);
-					}
-					if (gs("doctor"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.6425f, 100f, 50f), "Doctor", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.6425f, 100f, 50f), "1250 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.8f, 300f, 100f), string.Empty, button))
-					{
-						bh("cowbot", "Cowboy", 2500);
-					}
-					if (gs("cowbot"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "Cowboy", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "2500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						bh("pastor", "Pastor", 3575);
-					}
-					if (gs("pastor"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6275f, 0.195f, 100f, 50f), "Priest", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.195f, 100f, 50f), "3575 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						bh("corsair", "Corsair", 4750);
-					}
-					if (gs("corsair"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6225f, 0.345f, 100f, 50f), "Drake", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.345f, 100f, 50f), "4750 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						bh("eskimo", "Eskimo", 6500);
-					}
-					if (gs("eskimo"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "Eskimo", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "6500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.65f, 300f, 100f), string.Empty, button))
-					{
-						bh("marine", "Marine", 9000);
-					}
-					if (gs("marine"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6200f, 0.645f, 100f, 50f), "Marine", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.645f, 100f, 50f), "9000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.8f, 300f, 100f), string.Empty, button))
-					{
-						bh("swat", "swat", 1200);
-					}
-					if (gs("swat"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6275f, 0.795f, 100f, 50f), "Swat", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.795f, 100f, 50f), "12000 RP", font2);
-					}
-				}
-				if (shopIndex[1] == 1)
-				{
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						bh("ninja", "Ninja", 13500);
-					}
-					if (gs("ninja"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.195f, 100f, 50f), "Kunoichi", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.195f, 100f, 50f), "13500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						bh("beaf", "EnegyArmor", 15000);
-					}
-					if (gs("beaf"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.345f, 100f, 50f), "B.E.A.F.", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.345f, 100f, 50f), "15000 RP", font2);
-					}
+					obj.SetActive(false);
 				}
 			}
-			if (shopBools[2])
+			break;
+			case"MusicButton_COMZBGM1":
+			ChangeMusic("BGM1");
+			break;
+			case"MusicButton_COMZBGM2":
+			ChangeMusic("BGM2");
+			break;
+			case"MusicButton_MillerInst":
+			ChangeMusic("MILLERINST");
+			break;
+			case"MusicButton_AlphaMenu":
+			ChangeMusic("AlphaMenu");
+			break;
+			case"MusicButton_BetaMenu":
+			ChangeMusic("BetaMenu");
+			break;
+			case"MusicButton_DCBoss":
+			ChangeMusic("DinoCapBoss");
+			break;
+			case"SettingsButton_FirstPersonCam":
+			fpsCam = !fpsCam;
+			doFpsCam(fpsCam);
+			break;
+			case"SettingsButton_FOVUp":
+			if (FOV < 90)
+				FOV++;
+			break;
+			case"SettingsButton_FOVDown":
+			if (FOV > 45)
+				FOV--;
+			break;
+			case"SettingsButton_Mute":
+			Global.mute = !Global.mute;
+			if (Global.mute)
 			{
-				if (GUI.Button(Utilities.screenNoScaleRect(0.745f, 0.15f, 50f, 100f), string.Empty, arrowRight))
+				Game.ACInstance.GetComponent<AudioSource>().clip = null;
+			}
+			else
+			{
+				audioCon.ChangeClip(CurrentMusic);
+			}
+			break;
+			case"SettingsButton_MuteMusic":
+			Global.muteMusic = !Global.muteMusic;
+			if (Global.muteMusic)
+			{
+				Game.ACInstance.GetComponent<AudioSource>().clip = null;
+			}
+			else
+			{
+				audioCon.ChangeClip(CurrentMusic);
+			}
+			break;
+			case"ShopButton_Prestige":
+			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			{
+				if (obj.name == "PrestigeShop")
 				{
-					pbs();
-					if (shopIndex[2] < 1)
-					{
-						shopIndex[2]++;
-					}
+					obj.SetActive(true);
 				}
-				if (GUI.Button(Utilities.screenNoScaleRect(0.715f, 0.15f, 50f, 100f), string.Empty, arrowLeft))
+				else
 				{
-					pbs();
-					if (shopIndex[2] > 0)
-					{
-						shopIndex[2]--;
-					}
-				}
-				if (shopIndex[2] == 0)
-				{
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						pbs();
-						if (myGun != "MP5")
-						{
-							doGun("MP5");
-						}
-					}
-					GUI.Label(Utilities.screenNoScaleRect(0.465f, 0.195f, 100f, 50f), "MP5", font2);
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						bw("winchester", "Wechester1200", 250);
-					}
-					if (gs("winchester"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.44f, 0.3425f, 100f, 50f), "Winchester", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.3425f, 100f, 50f), "250 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						bw("p90", "P90", 500);
-					}
-					if (gs("p90"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.47f, 0.4925f, 100f, 50f), "P90", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.4925f, 100f, 50f), "500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
-					{
-						bw("m4", "M4", 2000);
-					}
-					if (gs("m4"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4725f, 0.6425f, 100f, 50f), "M4", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.6425f, 100f, 50f), "2000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.8f, 300f, 100f), string.Empty, button))
-					{
-						bw("remington", "Remington870", 3500);
-					}
-					if (gs("remington"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4475f, 0.7925f, 100f, 50f), "Remington", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "3500 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						bw("ak47", "AK47", 5000);
-					}
-					if (gs("ak47"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.195f, 100f, 50f), "AK47", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.195f, 100f, 50f), "5000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						bw("aug", "AUG", 10000);
-					}
-					if (gs("aug"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6275f, 0.345f, 100f, 50f), "AUG", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.345f, 100f, 50f), "10000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						bw("xm", "XM1014", 15000);
-					}
-					if (gs("xm"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "XM1014", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.495f, 100f, 50f), "15000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.65f, 300f, 100f), string.Empty, button))
-					{
-						bw("gatling", "Gatlin", 20000);
-					}
-					if (gs("gatling"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.645f, 100f, 50f), "Gatling", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.645f, 100f, 50f), "20000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.8f, 300f, 100f), string.Empty, button))
-					{
-						bw("flamer", "FireGun", 22500);
-					}
-					if (gs("flamer"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.5905f, 0.795f, 100f, 50f), "FlameThrower", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.795f, 100f, 50f), "22500 RP", font2);
-					}
-				}
-				if (shopIndex[2] == 1)
-				{
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
-					{
-						bw("laser", "LaserGun", 35000);
-					}
-					if (gs("laser"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.195f, 100f, 50f), "Laser", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.195f, 100f, 50f), "35000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
-					{
-						bw("rpg", "RPG", 50000);
-					}
-					if (gs("rpg"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.345f, 100f, 50f), "RPG", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.345f, 100f, 50f), "50000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
-					{
-						bw("launcher", "M32", 80000);
-					}
-					if (gs("launcher"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.495f, 100f, 50f), "M32", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.495f, 100f, 50f), "80000 RP", font2);
-					}
-					if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
-					{
-						bw("pgm", "Missle", 120000);
-					}
-					if (gs("pgm"))
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.645f, 100f, 50f), "PGM", font2);
-					}
-					else
-					{
-						GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.645f, 100f, 50f), "120000 RP", font2);
-					}
+					obj.SetActive(false);
 				}
 			}
+			break;
+			case"ShopButton_Upgrades":
+			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			{
+				if (obj.name == "UpgradeShop")
+				{
+					obj.SetActive(true);
+				}
+				else
+				{
+					obj.SetActive(false);
+				}
+			}
+			break;
+			case"ShopButton_PrestigeButton":
+			DoAPopup("you do not meet the requirements\n to prestige at this current time.", new Vector2(1.23f, -18.24f));
+			break;
+			case"ShopButton_EliteZombie":
+			bc("elitezombie", 100000);
+			if (gs("elitezombie") && Storager.GetInt("you did the moment") == 0 || gs("elitezombie") && Storager.GetInt("you did the moment") == 1 && myZombie != "Zombie")
+			{
+				Storager.SetInt("you did the moment", 1);
+				doZombie("Zombie", false);
+			}
+			break;
+			case"ShopButton_Joeblo":
+			if (myHuman != "Human")
+			{
+				doHuman("Human");
+			}
+			break;
+			case"ShopButton_Nerd":
+			bh("nerd", "Nerd", 150);
+			break;
+			case"ShopButton_Worker":
+			bh("plumber", "Plumber", 500);
+			break;
+			case"ShopButton_Doctor":
+			bh("doctor", "Doctor", 1250);
+			break;
+			case"ShopButton_Cowboy":
+			bh("cowbot", "Cowboy", 2500);
+			break;
+			case"ShopButton_Priest":
+			bh("pastor", "Pastor", 3575);
+			break;
+			case"ShopButton_Drake":
+			bh("corsair", "Corsair", 4750);
+			break;
+			case"ShopButton_Eskimo":
+			bh("eskimo", "Eskimo", 6500);
+			break;
+			case"ShopButton_Marine":
+			bh("marine", "Marine", 9000);
+			break;
+			case"ShopButton_Swat":
+			bh("swat", "swat", 12000);
+			break;
+			case"ShopButton_Kunoichi":
+			bh("ninja", "Ninja", 13500);
+			break;
+			case"ShopButton_B.E.A.F":
+			bh("beaf", "EnegyArmor", 15000);
+			break;
+			case"ShopButton_MP5":
+			if (myGun != "MP5")
+			{
+				doGun("MP5");
+			}
+			break;
+			case"ShopButton_Winchester":
+			bw("winchester", "Wechester1200", 250);
+			break;
+			case"ShopButton_P90":
+			bw("p90", "P90", 500);
+			break;
+			case"ShopButton_M4":
+			bw("m4", "M4", 2000);
+			break;
+			case"ShopButton_Remington":
+			bw("remington", "Remington870", 3500);
+			break;
+			case"ShopButton_AK47":
+			bw("ak47", "AK47", 5000);
+			break;
+			case"ShopButton_AUG":
+			bw("aug", "AUG", 10000);
+			break;
+			case"ShopButton_XM1014":
+			bw("xm", "XM1014", 15000);
+			break;
+			case"ShopButton_Gatling":
+			bw("gatling", "Gatlin", 20000);
+			break;
+			case"ShopButton_FlameThrower":
+			bw("flamer", "FireGun", 22500);
+			break;
+			case"ShopButton_Laser":
+			bw("laser", "LaserGun", 35000);
+			break;
+			case"ShopButton_RPG":
+			bw("rpg", "RPG", 50000);
+			break;
+			case"ShopButton_M32":
+			bw("launcher", "M32", 80000);
+			break;
+			case"ShopButton_PGM":
+			bw("pgm", "Missle", 120000);
+			break;
+			case"Shop":
+			Game.RUCInstance.UILayers[1].SetActive(true);
+			Game.RUCInstance.UILayers[0].SetActive(false);
+			break;
+			case"ShopButton_Back":
+			Game.RUCInstance.UILayers[0].SetActive(true);
+			Game.RUCInstance.UILayers[1].SetActive(false);
+			break;
+			case"ShopButton_Zombies":
+			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			{
+				if (obj.name == "ZombieShop")
+				{
+					obj.SetActive(true);
+				}
+				else
+				{
+					obj.SetActive(false);
+				}
+			}
+			break;
+			case"ShopButton_Avatars":
+			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			{
+				if (obj.name == "AvatarShop")
+				{
+					obj.SetActive(true);
+				}
+				else
+				{
+					obj.SetActive(false);
+				}
+			}
+			break;
+			case"ShopButton_Weapons":
+			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			{
+				if (obj.name == "WeaponShop")
+				{
+					obj.SetActive(true);
+				}
+				else
+				{
+					obj.SetActive(false);
+				}
+			}
+			break;
+			case"Shoot":
+			if (!MC.guy.GetComponent<HumanStats>().isShotgun && !MC.guy.GetComponent<HumanStats>().isRPG && !MC.guy.GetComponent<HumanStats>().isLaser)
+			{
+				if (!MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01"))
+				{
+					MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().Play("RunShoot01");
+				}
+			}
+			if (MC.guy.GetComponent<HumanStats>().isLaser)
+			{
+				if (!MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
+				{
+					MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().Play("RunShoot01_Laser");
+				}
+			}
+			if (MC.guy.GetComponent<HumanStats>().isShotgun)
+			{
+				if (!shotgun)
+				{
+					StartCoroutine(Shotgun());
+				}
+			}
+			if (MC.guy.GetComponent<HumanStats>().isRPG)
+			{
+				if(!rpg)
+				{
+					StartCoroutine(RPG());
+				}
+			}
+			break;
+			case"ShopButton_Zombie":
+			if (myZombie != "Zombie")
+			{
+				doZombie("Zombie", false);
+			}
+			break;
+			case"ShopButton_Dog":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie") == 1)
+			bz("dog", "Dog", 250);
+			break;
+			case"ShopButton_Nurse":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieDog") == 1)
+			bz("nurse", "Nurse", 750);
+			break;
+			case"ShopButton_ZombiePolice":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieNurse") == 1)
+			bz("policezombie", "Zombie_Police", 1500);
+			break;
+			case"ShopButton_ZombieSwat":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie_Police") == 1)
+			bz("swatzombie", "Zombie_Swat", 2500);
+			break;
+			case"ShopButton_Boomer":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie_Swat") == 1)
+			bz("boomer", "Boomer", 4000);
+			break;
+			case"ShopButton_Tank":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieBoomer") == 1)
+			bz("tank", "Tank", 7500);
+			break;
+			case"ShopButton_Hunter":
+			if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieTank") == 1)
+			bz("hunter", "Hunter", 15000);
+			break;
+			default:
+			Debug.LogError("found no button function for " + ButtonName);
+			break;
 		}
 	}
+
+	//void OnGUI()
+	//{
+	//	if (!shopOpen)
+	//	{
+	//		GUI.Label(Utilities.screenScaleRect(0.4835f, 0.0175f, 0.1f, 0.1f), "Enemy Health", font);
+	//		GUI.DrawTexture(Utilities.screenScaleRect(0.475f, 0.1f, Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 800f, 0.05f), testTexture);
+	//		GUI.DrawTexture(Utilities.screenScaleRect(0.475f, 0.1f, 0.127f, 0.052f), theThing2);
+	//		if (GUI.RepeatButton(Utilities.screenNoScaleRect(0.4f, 0.8f, 400f, 100f), string.Empty, button))
+	//		{
+	//			if (!MC.guy.GetComponent<HumanStats>().isShotgun && !MC.guy.GetComponent<HumanStats>().isRPG && !MC.guy.GetComponent<HumanStats>().isLaser)
+	//			{
+	//				if (!MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01"))
+	//				{
+	//					MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().Play("RunShoot01");
+	//				}
+	//			}
+	//			if (MC.guy.GetComponent<HumanStats>().isLaser)
+	//			{
+	//				if (!MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
+	//				{
+	//					MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().Play("RunShoot01_Laser");
+	//				}
+	//			}
+	//			if (MC.guy.GetComponent<HumanStats>().isShotgun)
+	//			{
+	//				if (!shotgun)
+	//				{
+	//					StartCoroutine(Shotgun());
+	//				}
+	//			}
+	//			if (MC.guy.GetComponent<HumanStats>().isRPG)
+	//			{
+	//				if(!rpg)
+	//				{
+	//					StartCoroutine(RPG());
+	//				}
+	//			}
+	//		}
+	//		else
+	//		{
+	//			if (GameObject.Find("Laser(Clone)") && !MC.guy.GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
+	//			{
+	//				try
+	//				{
+	//					Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(GameObject.Find("Laser(Clone)")));
+	//				}
+	//				catch
+	//				{
+	//					Debug.Log("unfound");
+	//				}
+	//				Destroy(GameObject.Find("Laser(Clone)"));
+	//			}
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.4765f, 0.792f, 100f, 50f), "Shoot", font2);
+	//		}
+	//		GUI.DrawTexture(Utilities.screenScaleRect(0.05f, 0.025f, 0.2f, 0.15f), header);
+	//		GUI.Label(Utilities.screenScaleRect(0.1035f, 0.0015f, 0.1f, 0.1f), "RunPoints", font);
+	//		GUI.Label(Utilities.screenScaleRect(0.1175f, 0.075f, 0.1f, 0.1f), "" + Math.Round(RunPoints), font);
+	//		GUI.DrawTexture(Utilities.screenScaleRect(0.25f, 0.025f, 0.2f, 0.15f), header);
+	//		GUI.Label(Utilities.screenScaleRect(0.3275f, 0.0015f, 0.1f, 0.1f), "RPS", font);
+	//		GUI.Label(Utilities.screenScaleRect(0.3175f, 0.075f, 0.1f, 0.1f), "" + RunPointsPerSecond, font);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.75f, 0.05f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			if (!settingsOpen)
+	//			{
+	//			shopOpen = !shopOpen;
+	//			}
+	//		}
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.8f, 0.8f, 200f, 100f), string.Empty, settingsButton))
+	//		{
+	//			pbs();
+	//			if (!shopOpen)
+	//			{
+	//			settingsOpen = !settingsOpen;
+	//			}
+	//	}
+	//	GUI.Label(Utilities.screenNoScaleRect(0.8065f, 0.042f, 100f, 50f), "Shop", font2);
+	//	if (settingsOpen)
+	//	{
+	//		GUI.DrawTexture(Utilities.screenScaleRect(0.2f, 0.15f, 0.58f, 0.775f), bg);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.2f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			DoTheSettingsBools(!settingsBools[0], 0);
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.275f, 0.1925f, 100f, 50f), "Music", font2);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.35f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			DoTheSettingsBools(!settingsBools[1], 1);
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.275f, 0.3425f, 100f, 50f), "Video", font2);
+	//		if (settingsBools[0])
+	//		{
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
+	//			{
+	//				pbs();
+	//				if (CurrentMusic != "BGM1")
+	//				{
+	//				CurrentMusic = "BGM1";
+	//				audioCon.ChangeClip(CurrentMusic);
+	//				}
+	//			}
+	//			GUI.Label(Utilities.screenNoScaleRect(0.5925f, 0.195f, 100f, 50f), "COMZ BGM 1", font2);
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
+	//			{
+	//				pbs();
+	//				if (CurrentMusic != "BGM2")
+	//				{
+	//				CurrentMusic = "BGM2";
+	//				audioCon.ChangeClip(CurrentMusic);
+	//				}
+	//			}
+	//			GUI.Label(Utilities.screenNoScaleRect(0.5925f, 0.3425f, 100f, 50f), "COMZ BGM 2", font2);
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
+	//			{
+	//				pbs();
+	//				if (CurrentMusic != "MILLERINST")
+	//				{
+	//				CurrentMusic = "MILLERINST";
+	//				audioCon.ChangeClip(CurrentMusic);
+	//				}
+	//			}
+	//			GUI.Label(Utilities.screenNoScaleRect(0.6075f, 0.4925f, 100f, 50f), "Miller Inst", font2);
+	//		}
+	//		if (settingsBools[1])
+	//		{
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
+	//			{
+	//				pbs();
+	//				fpsCam = !fpsCam;
+	//				doFpsCam(fpsCam);
+	//			}
+	//			GUI.Label(Utilities.screenNoScaleRect(0.5525f, 0.1325f, 100f, 50f), "Motion Sickness Warning!", font2);
+	//			GUI.Label(Utilities.screenNoScaleRect(0.6025f, 0.1925f, 100f, 50f), "FPS Camera", font2);
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.63f, 0.35f, 75f, 75f), string.Empty, plus))
+	//			{
+	//				pbs();
+	//				if (FOV < 90)
+	//				{
+	//					FOV++;
+	//				}
+	//			}
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.68f, 0.35f, 75f, 75f), string.Empty, minus))
+	//			{
+	//				pbs();
+	//				if (FOV > 45)
+	//				{
+	//					FOV--;
+	//				}
+	//			}
+	//			GUI.Label(Utilities.screenNoScaleRect(0.5525f, 0.3425f, 100f, 50f), "FOV(" + FOV + ")", font2);
+	//		}
+	//	}
+	//	if (shopOpen)
+	//	{
+	//		GUI.DrawTexture(Utilities.screenScaleRect(0.2f, 0.15f, 0.58f, 0.775f), bg);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.2f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			DoTheShopBools(!shopBools[0], 0);
+	//		//no
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.265f, 0.1925f, 100f, 50f), "Zombies", font2);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.35f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			DoTheShopBools(!shopBools[1], 1);
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.275f, 0.3425f, 100f, 50f), "Skins", font2);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.5f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			DoTheShopBools(!shopBools[2], 2);
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.26f, 0.4925f, 100f, 50f), "Weapons", font2);
+	//		if (GUI.Button(Utilities.screenNoScaleRect(0.22f, 0.65f, 300f, 100f), string.Empty, button))
+	//		{
+	//			pbs();
+	//			DoTheShopBools(!shopBools[3], 3);
+	//		}
+	//		GUI.Label(Utilities.screenNoScaleRect(0.2575f, 0.6425f, 100f, 50f), "Upgrades", font2);
+	//		if (shopBools[3])
+	//		{
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+	//			{
+	//				pbs();
+	//				bc("elitezombie", 100000);
+	//				if (gs("elitezombie"))
+	//				{
+	//					doZombie("Zombie", false);
+	//				}
+	//			}
+	//			if (gs("elitezombie"))
+	//			{
+	//				GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.195f, 100f, 50f), "Elite", font2);
+	//			}
+	//			else
+	//			{
+	//				GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.195f, 100f, 50f), "100000", font2);
+	//			}
+	//		}
+	//		if (shopBools[0])
+	//		{
+	//			if (shopIndex[0] == 0)
+	//			{
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					pbs();
+	//					if (myZombie != "Zombie")
+	//					{
+	//						doZombie("Zombie", false);
+	//					}
+	//				}
+	//				GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.195f, 100f, 50f), "Zombie", font2);
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie") == 1)
+	//					bz("dog", "Dog", 250);
+	//				}
+	//				if (gs("dog") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.47f, 0.3425f, 100f, 50f), "Dog", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieZombie") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4550f, 0.3425f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.3425f, 100f, 50f), "250 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieDog") == 1)
+	//					bz("nurse", "Nurse", 750);
+	//				}
+	//				if (gs("nurse") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieDog") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.465f, 0.4925f, 100f, 50f), "Nurse", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieDog") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.4925f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.4925f, 100f, 50f), "750 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieNurse") == 1)
+	//					bz("policezombie", "Zombie_Police", 1500);
+	//				}
+	//				if (gs("policezombie") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieNurse") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4325f, 0.6425f, 100f, 50f), "Police Zombie", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieNurse") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4550f, 0.6425f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.6425f, 100f, 50f), "1500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.8f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie_Police") == 1)
+	//					bz("swatzombie", "Zombie_Swat", 2500);
+	//				}
+	//				if (gs("swatzombie") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie_Police") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4355f, 0.7925f, 100f, 50f), "Swat Zombie", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieZombie_Police") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4550f, 0.7925f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "2500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie_Swat") == 1)
+	//					bz("boomer", "Boomer", 4000);
+	//				}
+	//				if (gs("boomer") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieZombie_Swat") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6165f, 0.195f, 100f, 50f), "Boomer", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieZombie_Swat") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6150f, 0.195f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.615f, 0.195f, 100f, 50f), "4000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieBoomer") == 1)
+	//					bz("tank", "Tank", 7500);
+	//				}
+	//				if (gs("tank") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieBoomer") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6265f, 0.345f, 100f, 50f), "Tank", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieBoomer") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6150f, 0.345f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.345f, 100f, 50f), "7500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					if (!eliteZombie || eliteZombie && Storager.GetInt("killedzombieTank") == 1)
+	//					bz("hunter", "Hunter", 15000);
+	//				}
+	//				if (gs("hunter") && !eliteZombie || eliteZombie && Storager.GetInt("killedzombieTank") == 1)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "Hunter", font2);
+	//				}
+	//				else if (eliteZombie && Storager.GetInt("killedzombieTank") == 0)
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6150f, 0.495f, 100f, 50f), "Kill Last", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.495f, 100f, 50f), "15000 RP", font2);
+	//				}
+	//			}
+	//		}
+	//		if (shopBools[1])
+	//		{
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.745f, 0.15f, 50f, 100f), string.Empty, arrowRight))
+	//			{
+	//				pbs();
+	//				if (shopIndex[1] < 1)
+	//				{
+	//					shopIndex[1]++;
+	//				}
+	//			}
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.715f, 0.15f, 50f, 100f), string.Empty, arrowLeft))
+	//			{
+	//				pbs();
+	//				if (shopIndex[1] > 0)
+	//				{
+	//					shopIndex[1]--;
+	//				}
+	//			}
+	//			if (shopIndex[1] == 0)
+	//			{
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					pbs();
+	//					if (myHuman != "Human")
+	//					{
+	//						doHuman("Human");
+	//					}
+	//				}
+	//				GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.195f, 100f, 50f), "Joe Blo", font2);
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("nerd", "Nerd", 150);
+	//				}
+	//				if (gs("nerd"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.465f, 0.3425f, 100f, 50f), "Nerd", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.3425f, 100f, 50f), "150 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("plumber", "Plumber", 500);
+	//				}
+	//				if (gs("plumber"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.455f, 0.4925f, 100f, 50f), "Worker", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.4925f, 100f, 50f), "500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("doctor", "Doctor", 1250);
+	//				}
+	//				if (gs("doctor"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.6425f, 100f, 50f), "Doctor", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.6425f, 100f, 50f), "1250 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.8f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("cowbot", "Cowboy", 2500);
+	//				}
+	//				if (gs("cowbot"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "Cowboy", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "2500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("pastor", "Pastor", 3575);
+	//				}
+	//				if (gs("pastor"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6275f, 0.195f, 100f, 50f), "Priest", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.195f, 100f, 50f), "3575 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("corsair", "Corsair", 4750);
+	//				}
+	//				if (gs("corsair"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6225f, 0.345f, 100f, 50f), "Drake", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.345f, 100f, 50f), "4750 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("eskimo", "Eskimo", 6500);
+	//				}
+	//				if (gs("eskimo"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "Eskimo", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "6500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.65f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("marine", "Marine", 9000);
+	//				}
+	//				if (gs("marine"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6200f, 0.645f, 100f, 50f), "Marine", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.645f, 100f, 50f), "9000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.8f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("swat", "swat", 1200);
+	//				}
+	//				if (gs("swat"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6275f, 0.795f, 100f, 50f), "Swat", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.795f, 100f, 50f), "12000 RP", font2);
+	//				}
+	//			}
+	//			if (shopIndex[1] == 1)
+	//			{
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("ninja", "Ninja", 13500);
+	//				}
+	//				if (gs("ninja"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.195f, 100f, 50f), "Kunoichi", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.195f, 100f, 50f), "13500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bh("beaf", "EnegyArmor", 15000);
+	//				}
+	//				if (gs("beaf"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.345f, 100f, 50f), "B.E.A.F.", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.345f, 100f, 50f), "15000 RP", font2);
+	//				}
+	//			}
+	//		}
+	//		if (shopBools[2])
+	//		{
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.745f, 0.15f, 50f, 100f), string.Empty, arrowRight))
+	//			{
+	//				pbs();
+	//				if (shopIndex[2] < 1)
+	//				{
+	//					shopIndex[2]++;
+	//				}
+	//			}
+	//			if (GUI.Button(Utilities.screenNoScaleRect(0.715f, 0.15f, 50f, 100f), string.Empty, arrowLeft))
+	//			{
+	//				pbs();
+	//				if (shopIndex[2] > 0)
+	//				{
+	//					shopIndex[2]--;
+	//				}
+	//			}
+	//			if (shopIndex[2] == 0)
+	//			{
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					pbs();
+	//					if (myGun != "MP5")
+	//					{
+	//						doGun("MP5");
+	//					}
+	//				}
+	//				GUI.Label(Utilities.screenNoScaleRect(0.465f, 0.195f, 100f, 50f), "MP5", font2);
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("winchester", "Wechester1200", 250);
+	//				}
+	//				if (gs("winchester"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.44f, 0.3425f, 100f, 50f), "Winchester", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.3425f, 100f, 50f), "250 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("p90", "P90", 500);
+	//				}
+	//				if (gs("p90"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.47f, 0.4925f, 100f, 50f), "P90", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.4925f, 100f, 50f), "500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("m4", "M4", 2000);
+	//				}
+	//				if (gs("m4"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4725f, 0.6425f, 100f, 50f), "M4", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.46f, 0.6425f, 100f, 50f), "2000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.8f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("remington", "Remington870", 3500);
+	//				}
+	//				if (gs("remington"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4475f, 0.7925f, 100f, 50f), "Remington", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.7925f, 100f, 50f), "3500 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("ak47", "AK47", 5000);
+	//				}
+	//				if (gs("ak47"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.195f, 100f, 50f), "AK47", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.195f, 100f, 50f), "5000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("aug", "AUG", 10000);
+	//				}
+	//				if (gs("aug"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6275f, 0.345f, 100f, 50f), "AUG", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.345f, 100f, 50f), "10000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("xm", "XM1014", 15000);
+	//				}
+	//				if (gs("xm"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.495f, 100f, 50f), "XM1014", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.495f, 100f, 50f), "15000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.65f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("gatling", "Gatlin", 20000);
+	//				}
+	//				if (gs("gatling"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.6175f, 0.645f, 100f, 50f), "Gatling", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.645f, 100f, 50f), "20000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.57f, 0.8f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("flamer", "FireGun", 22500);
+	//				}
+	//				if (gs("flamer"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.5905f, 0.795f, 100f, 50f), "FlameThrower", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.61f, 0.795f, 100f, 50f), "22500 RP", font2);
+	//				}
+	//			}
+	//			if (shopIndex[2] == 1)
+	//			{
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.2f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("laser", "LaserGun", 35000);
+	//				}
+	//				if (gs("laser"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.195f, 100f, 50f), "Laser", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.195f, 100f, 50f), "35000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.35f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("rpg", "RPG", 50000);
+	//				}
+	//				if (gs("rpg"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.345f, 100f, 50f), "RPG", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.345f, 100f, 50f), "50000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.5f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("launcher", "M32", 80000);
+	//				}
+	//				if (gs("launcher"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.495f, 100f, 50f), "M32", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.495f, 100f, 50f), "80000 RP", font2);
+	//				}
+	//				if (GUI.Button(Utilities.screenNoScaleRect(0.41f, 0.65f, 300f, 100f), string.Empty, button))
+	//				{
+	//					bw("pgm", "Missle", 120000);
+	//				}
+	//				if (gs("pgm"))
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.4675f, 0.645f, 100f, 50f), "PGM", font2);
+	//				}
+	//				else
+	//				{
+	//					GUI.Label(Utilities.screenNoScaleRect(0.45f, 0.645f, 100f, 50f), "120000 RP", font2);
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
 
 	public void DoTheShopBools(bool the, int index)
 	{
@@ -1348,7 +1738,7 @@ public class RunController : MonoBehaviour
 		{
 			LevelIndex = 8;
 		}
-		if (PlayerPrefs.GetInt("donezombie") == 0)
+		if (Storager.GetInt("donezombie") == 0)
 		{
 			myZombie = "Zombie";
 			myHuman = "Human";
@@ -1357,7 +1747,7 @@ public class RunController : MonoBehaviour
 			FOV = 60;
 			doMyZombie(false);
 			CurrentZombieHealth = Resources.Load<GameObject>("zombies/Zombie").GetComponent<ZombieStats>().health;
-			PlayerPrefs.SetInt("donezombie", 1);
+			Storager.SetInt("donezombie", 1);
 		}
 		doMyZombie(true);
 		doHuman(myHuman);
@@ -1378,13 +1768,13 @@ public class RunController : MonoBehaviour
 		MC.zombie.GetComponent<Animation>().Play("Death01");
 		audioCon.PlayClip(MC.zombie.GetComponent<ZombieStats>().deathSound, new Vector2(0.9f, 1.1f));
 		MC.zombie.GetComponent<ZombieStats>().isDead = true;
-		if (eliteZombie && myZombie == "Hunter" && PlayerPrefs.GetInt("killedzombie" + myZombie) == 0)
+		if (eliteZombie && myZombie == "Hunter" && Storager.GetInt("killedzombie" + myZombie) == 0)
 		{
 			Application.LoadLevel("claimPrize");
 		}
-		if (eliteZombie && PlayerPrefs.GetInt("killedzombie" + myZombie) == 0)
+		if (eliteZombie && Storager.GetInt("killedzombie" + myZombie) == 0)
 		{
-			PlayerPrefs.SetInt("killedzombie" + myZombie, 1);
+			Storager.SetInt("killedzombie" + myZombie, 1);
 		}
 	}
 
@@ -1399,7 +1789,7 @@ public class RunController : MonoBehaviour
 		#if UNITY_EDITOR
 		if (Input.GetKeyDown("m"))
 		{
-			PlayerPrefs.DeleteAll();
+			Storager.RemoveAll();
 		}
 		if (Input.GetKeyDown("n"))
 		{
@@ -1410,6 +1800,11 @@ public class RunController : MonoBehaviour
 			MC.DetachedCam.GetComponent<CamShake>().shake = !MC.DetachedCam.GetComponent<CamShake>().shake;
 		}
 		#endif
+		Game.RUCInstance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth)/ 100f, 1f, 1f);
+		Game.RUCInstance.GetLabel("RPLabel").text = "" + Math.Round(RunPoints);
+		Game.RUCInstance.GetLabel("RPLabelShop").text = "" + Math.Round(RunPoints);
+		Game.RUCInstance.GetLabel("RPSLabel").text = "" + RunPointsPerSecond;
+		Game.RUCInstance.GetLabel("FOVAmountText").text = "" + FOV;
 		if (CurrentZombieHealth == 0f)
 		{
 			ZombieDeath();
@@ -1439,7 +1834,10 @@ public class RunController : MonoBehaviour
 		}
 		if (MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01") && !MC.guy.GetComponent<HumanStats>().weapon.GetComponent<AudioSource>().isPlaying && !MC.guy.GetComponent<HumanStats>().isShotgun && !MC.guy.GetComponent<HumanStats>().isRPG || MC.guy.GetComponent<HumanStats>().GetComponent<Animation>().IsPlaying("RunShoot01_Laser") && !MC.guy.GetComponent<HumanStats>().weapon.GetComponent<AudioSource>().isPlaying)
 		{
-			MC.guy.GetComponent<HumanStats>().weapon.GetComponent<AudioSource>().Play();
+			if (!Global.mute)
+			{
+				MC.guy.GetComponent<HumanStats>().weapon.GetComponent<AudioSource>().Play();
+			}
 		}
 		else if (!MC.guy.GetComponent<Animation>().IsPlaying("RunShoot01") && MC.guy.GetComponent<HumanStats>().weapon.GetComponent<AudioSource>().isPlaying && !MC.guy.GetComponent<HumanStats>().isShotgun && !MC.guy.GetComponent<HumanStats>().isLaser && !MC.guy.GetComponent<HumanStats>().isRPG)
 		{

@@ -6,7 +6,7 @@ public class AudioControllerChild : MonoBehaviour
 {
 	void Update()
 	{
-		if (!GetComponent<AudioSource>().isPlaying)
+		if (!GetComponent<AudioSource>().isPlaying || Global.mute)
 		{
 			transform.parent.GetComponent<AudioController>().tempSources.RemoveAt(transform.parent.GetComponent<AudioController>().tempSources.IndexOf(this.gameObject.GetComponent<AudioSource>()));
 			Destroy(gameObject);

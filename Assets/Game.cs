@@ -21,5 +21,13 @@ namespace COMIdleStage1
 				return GameObject.Find("RunController").GetComponent<RunController>();
 			}
 		}
+
+		public static RunUIController RUCInstance
+		{
+			get
+			{
+				return GameObject.Find("3DUI").GetComponent<RunUIController>();
+			}
+		}
 	}
 }

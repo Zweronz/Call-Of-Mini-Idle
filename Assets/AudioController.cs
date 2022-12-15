@@ -6,6 +6,10 @@ public class AudioController : MonoBehaviour {
 
 public void ChangeClip(string AC)
 {
+	if (Global.mute || Global.muteMusic)
+	{
+		return;
+	}
 	StartCoroutine(FadeOut(Resources.Load<AudioClip>("music/" + AC)));
 }
 
@@ -13,6 +17,10 @@ public List<AudioSource> tempSources = new List<AudioSource>();
 
 public void PlayClip(AudioClip AC, Vector2 pitchRange = default(Vector2), AudioPlayType APT = AudioPlayType.normal, float volume = 1f)
 {
+	if (Global.mute)
+	{
+		return;
+	}
 	bool pitched = pitchRange != default(Vector2);
 	AudioSource newAS = new GameObject("AudioCon Temp Source").AddComponent<AudioSource>();
 	newAS.transform.parent = this.transform;
@@ -56,6 +64,10 @@ public void PlayClip(AudioClip AC, Vector2 pitchRange = default(Vector2), AudioP
 
 public IEnumerator FadeOut(AudioClip AC)
 {
+	if (Global.mute)
+	{
+		yield break;
+	}
 	if (GetComponent<AudioSource>().clip != null)
 	{
 	while (GetComponent<AudioSource>().volume > 0f)

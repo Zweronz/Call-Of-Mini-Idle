@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4759021307760522}
   - component: {fileID: 82209159093308916}
   - component: {fileID: 114326790417935758}
+  - component: {fileID: 114049652777032244}
   m_Layer: 0
   m_Name: RPG_EXP
   m_TagString: Untagged
@@ -786,6 +787,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114049652777032244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022334966317790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114326790417935758
 MonoBehaviour:
   m_ObjectHideFlags: 1

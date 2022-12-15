@@ -15,6 +15,8 @@ public class ThreeDeeButton : MonoBehaviour
 
 	private bool shouldChangeMat;
 
+	public bool repeatButton;
+
 	public void OnClicked()
 	{
 		StartCoroutine(click());
@@ -28,8 +30,15 @@ public class ThreeDeeButton : MonoBehaviour
 		while (Input.GetMouseButton(0))
 		{
 			yield return new WaitForEndOfFrame();
+			if (repeatButton)
+			{
+				this.SendMessage(this.name);
+			}
 		}
-		shouldChangeMat = true;
+		if (!repeatButton)
+		{
+			shouldChangeMat = true;
+		}
 		this.SendMessage(this.name);
 	}
 

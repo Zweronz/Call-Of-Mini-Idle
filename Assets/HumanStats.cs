@@ -57,7 +57,10 @@ public void DoShot()
         GameObject objthe2 = Utilities.InsGobj(Resources.Load<GameObject>(weapon.GetComponent<WeaponStats>().rpgPrefab), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
         objthe2.transform.Rotate(new Vector3 (0f, 180f, 0f));
         Game.RCInstance.EffectsCache.Add(objthe2);
-        Game.ACInstance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
+        if (!Global.mute)
+        {
+            Game.ACInstance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
+        }
         break;
 
         case WeaponStats.WeaponType.flamer:
@@ -72,7 +75,10 @@ public void DoShot()
         GameObject objthe = Utilities.InsGobj(Resources.Load<GameObject>("ShotGunFire"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
         objthe.transform.Rotate(0f, 180f, 0f);
         Game.RCInstance.EffectsCache.Add(objthe);
-        Game.ACInstance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
+        if (!Global.mute)
+        {
+            Game.ACInstance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
+        }
         break;
 
         case WeaponStats.WeaponType.gatling:
