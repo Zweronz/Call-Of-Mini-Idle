@@ -49,7 +49,9 @@ public class ThreeDeeButton : MonoBehaviour
 
 	public void Menu_Start()
 	{
-		Application.LoadLevel("funny");
+		GameObject.Find("Pivot/3DUI/MenuUI").SetActive(false);
+		GameObject.Find("Pivot/3DUI/LoadingUI").SetActive(true);
+		GameObject.Find("MenuController").GetComponent<MenuController>().DoTheLoad("funny");
 	}
 
 	public void Menu_Exit()
@@ -59,5 +61,11 @@ public class ThreeDeeButton : MonoBehaviour
 
 	public void Menu_Settings()
 	{
+		GameObject.Find("Pivot/3DUI/MenuUI").GetComponent<Animation>().Play("ScrollToSettings");
+	}
+
+	public void Settings_Back()
+	{
+		GameObject.Find("Pivot/3DUI/MenuUI").GetComponent<Animation>().Play("ScrollBackFromSettings");
 	}
 }

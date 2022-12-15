@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - 3DUI Camera
+  - LoadingUI
   layers:
   - Default
   - TransparentFX
