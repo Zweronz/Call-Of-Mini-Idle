@@ -16,6 +16,10 @@ public class DisclaimerController : MonoBehaviour
 		{
 			Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
 			GameObject.Find("DisclaimerUI").GetComponent<Animation>().Play((Application.loadedLevelName == "credits") ? "CreditsClose" :"DisclaimerEnd");
+			if (Application.loadedLevelName == "credits")
+			{
+				LoadingUI.SetActive(false);
+			}
 			done = true;
 		}
 	}

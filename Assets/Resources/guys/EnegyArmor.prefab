@@ -1220,7 +1220,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375144150565400}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 68d17b056a491b54c8495196b438495d, type: 3}
@@ -1300,7 +1300,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631665960584078}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9e2d7c4e69c64b34d9d20ab22692dea0, type: 3}
@@ -1380,7 +1380,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078166313717116}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9717f1c2444d4534784b1ce86484cb13, type: 3}
@@ -1460,7 +1460,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585622158114152}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b87934512e1cfa741b6024b0ab3ee03c, type: 3}
@@ -1540,7 +1540,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149745640772398}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4523e75303706c84ea1c0072c7d239a9, type: 3}
@@ -1620,7 +1620,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817546300017778}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d601c6019ff7e514e9d252d5f37ebd01, type: 3}
@@ -1726,6 +1726,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepSound: {fileID: 8300000, guid: 68d17b056a491b54c8495196b438495d, type: 3}
   volume: 0.4
+  tank: 0
+  eliteTank: 0
 --- !u!114 &114469555035876470
 MonoBehaviour:
   m_ObjectHideFlags: 1

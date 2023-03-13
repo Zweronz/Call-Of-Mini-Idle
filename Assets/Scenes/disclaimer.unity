@@ -212,6 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenFrames: 0.01
   startOnAwake: 1
+  frameSound: {fileID: 0}
   start: 0
 --- !u!1 &423550275
 GameObject:
@@ -570,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenFrames: 0.01
   startOnAwake: 1
+  frameSound: {fileID: 0}
   start: 0
 --- !u!1 &1577111424
 GameObject:
@@ -670,6 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenFrames: 0.01
   startOnAwake: 1
+  frameSound: {fileID: 0}
   start: 0
 --- !u!1 &1659633102
 GameObject:
@@ -776,6 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenFrames: 0.01
   startOnAwake: 1
+  frameSound: {fileID: 8300000, guid: f4c86cbf36cf3e54eb8dd02baf0fdae9, type: 3}
   start: 0
 --- !u!1 &1689568362
 GameObject:

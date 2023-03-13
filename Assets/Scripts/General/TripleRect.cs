@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 struct TripleRect
 {
 	public Rect Rect1;

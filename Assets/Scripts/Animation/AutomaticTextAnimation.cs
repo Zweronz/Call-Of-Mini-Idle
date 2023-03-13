@@ -10,6 +10,8 @@ public class AutomaticTextAnimation : MonoBehaviour
 
 	[SerializeField] private bool startOnAwake = true;
 
+	[SerializeField] private AudioClip frameSound;
+
 	private string storedText;
 
 	[HideInInspector] public bool start;
@@ -42,6 +44,10 @@ public class AutomaticTextAnimation : MonoBehaviour
 		anim.timeBetweenFrames = timeBetweenFrames;
 		anim.stopWhenDone = true;
 		anim.addTo = true;
+		if (frameSound != null)
+		{
+			anim.frameSound = frameSound;
+		}
 		Destroy(this);
 	}
 }

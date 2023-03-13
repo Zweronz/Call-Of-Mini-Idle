@@ -474,6 +474,7 @@ MonoBehaviour:
   timeBetweenFrames: 0.1
   stopWhenDone: 0
   addTo: 0
+  frameSound: {fileID: 0}
 --- !u!102 &729987621
 TextMesh:
   serializedVersion: 3
@@ -675,6 +676,7 @@ MonoBehaviour:
   timeBetweenFrames: 0.1
   stopWhenDone: 0
   addTo: 0
+  frameSound: {fileID: 0}
 --- !u!102 &1438216686
 TextMesh:
   serializedVersion: 3

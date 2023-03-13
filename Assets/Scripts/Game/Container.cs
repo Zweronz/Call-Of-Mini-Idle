@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Container : MonoBehaviour {
-public Transform movingCamPos;
+public class Container : MonoBehaviour
+{
+    public Transform movingCamPos;
 }

@@ -5,12 +5,9 @@ using COMIdleStage1;
 
 public class IdleThreeDeeButton : MonoBehaviour
 {
+	[SerializeField] public Material pressedMat;
 
-	[SerializeField]
-	public Material pressedMat;
-
-	[SerializeField]
-	public AudioClip pressSound;
+	[SerializeField] public AudioClip pressSound;
 
 	private Material originalMaterial;
 

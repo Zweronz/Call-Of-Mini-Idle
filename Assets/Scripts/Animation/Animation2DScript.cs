@@ -12,10 +12,6 @@ public class Animation2DScript : MonoBehaviour
 
 	protected float deltaTime;
 
-	private void Start()
-	{
-	}
-
 	private void Update()
 	{
 		deltaTime += Time.deltaTime;

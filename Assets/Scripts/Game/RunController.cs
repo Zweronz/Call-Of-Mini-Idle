@@ -6,7 +6,6 @@ using COMIdleStage1;
 
 public class RunController : MonoBehaviour
 {
-
 	public Texture theThing2;
 
 	public Transform deadZombieZone;
@@ -534,9 +533,9 @@ public class RunController : MonoBehaviour
 
 	public void LoadBackToMenu()
 	{
-		foreach(AudioSource AS in Resources.FindObjectsOfTypeAll<AudioSource>())
+		foreach(AudioSource AS in FindObjectsOfTypeAll(typeof(AudioSource)))
 		{
-			if (AS.name != "LoadingUI")
+			if (AS.name != "LoadingUI" && AS.gameObject.activeInHierarchy)
 			{
 				AS.enabled = false;
 			}
@@ -640,7 +639,8 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"GeneralButton_Credits":
-			Application.LoadLevel("Credits");
+			LoadingUI.LoadLevel("credits");
+			Game.RUCInstance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
 			break;
 			case"MusicButton_COMZBGM1":
 			ChangeMusic("BGM1");

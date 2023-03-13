@@ -744,6 +744,7 @@ MonoBehaviour:
   - {fileID: 15582653559171742}
   - {fileID: 15689163608933122}
   - {fileID: 15489437710556616}
+  rpgPrefab: 
   weaponType: 4
 --- !u!137 &137009720706510620
 SkinnedMeshRenderer:

@@ -388,6 +388,7 @@ MonoBehaviour:
   gatlingFirePoints: []
   emit: []
   emit2: []
+  rpgPrefab: 
   weaponType: 2
 --- !u!114 &114729837799430822
 MonoBehaviour:

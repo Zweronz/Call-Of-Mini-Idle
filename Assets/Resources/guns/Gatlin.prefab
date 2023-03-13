@@ -496,6 +496,7 @@ MonoBehaviour:
   - {fileID: 4248010171020816}
   emit: []
   emit2: []
+  rpgPrefab: 
   weaponType: 1
 --- !u!114 &114976466612930994
 MonoBehaviour:

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(TextMesh))]
 public class TextAnimation : MonoBehaviour
 {
 	private IEnumerator animationLoop()
@@ -21,6 +23,7 @@ public class TextAnimation : MonoBehaviour
 			{
 				animationIndex++;
 			}
+			GetComponent<AudioSource>().PlayOneShot(frameSound);
 			GetComponent<TextMesh>().text = addTo ? GetComponent<TextMesh>().text + frames[animationIndex]  : frames[animationIndex];
 		}
 	}
@@ -40,4 +43,6 @@ public class TextAnimation : MonoBehaviour
 	public bool stopWhenDone;
 
 	public bool addTo;
+
+	public AudioClip frameSound;
 }

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using COMIdleStage1;
 
-public class Destroy : MonoBehaviour {
-public void DestroyObj()
+public class Destroy : MonoBehaviour
 {
-	try
+	public void DestroyObj()
 	{
-		Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+		try
+		{
+			Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+		}
+		catch
+		{
+			Debug.Log("unfound");
+		}
+		Destroy(base.gameObject);
 	}
-	catch
-	{
-		Debug.Log("unfound");
-	}
-	Destroy(base.gameObject);
-}
 }

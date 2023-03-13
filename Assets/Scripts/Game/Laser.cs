@@ -18,7 +18,7 @@ public class Laser : MonoBehaviour
 		this.transform.localScale = newScale;
 		if (Physics.Raycast(start.transform.position, this.transform.forward, out hit, 99f, layerMask))
 		{
-			newScale.z = Vector3.Distance(hit.point, this.transform.position) / 50f;
+			newScale.z = Vector3.Distance(hit.point, this.transform.position) / 44f;
 			GameObject obj = Instantiate(GameAsset.Load<GameObject>("zombile3d_laser"), hit.point, Quaternion.identity);
 			obj.transform.parent = hit.transform;
 			Game.RCInstance.EffectsCache.Add(obj);
@@ -31,7 +31,7 @@ public class Laser : MonoBehaviour
 		this.transform.localScale = newScale;
 		if (Physics.Raycast(start.transform.position, this.transform.forward, out hit, 99f, layerMask))
 		{
-			newScale.z = Vector3.Distance(hit.point, this.transform.position) / 50f;
+			newScale.z = Vector3.Distance(hit.point, this.transform.position) / 44f;
 			GameObject obj = Instantiate(GameAsset.Load<GameObject>("zombile3d_laser"), hit.point, Quaternion.identity);
 			obj.transform.parent = hit.transform;
 			Game.RCInstance.EffectsCache.Add(obj);

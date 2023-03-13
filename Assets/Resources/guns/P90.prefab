@@ -346,9 +346,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0.5
+  randomDamage: {x: 0, y: 0}
   firePoint: {fileID: 4982357889175666}
   gatlingFirePoints: []
-  isGatling: 0
+  emit: []
+  emit2: []
+  rpgPrefab: 
+  weaponType: 0
 --- !u!137 &137543691433047218
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

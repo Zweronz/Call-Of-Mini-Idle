@@ -5,7 +5,9 @@ using UnityEngine;
 public class CamShake : MonoBehaviour
 {
 	public bool shake;
+	
 	private bool reset;
+
 	void Start()
 	{
 		StartCoroutine(ShakeLoop());

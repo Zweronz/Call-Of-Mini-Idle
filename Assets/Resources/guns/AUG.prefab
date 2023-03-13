@@ -324,7 +324,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
+  randomDamage: {x: 0, y: 0}
   firePoint: {fileID: 4936749120762376}
+  gatlingFirePoints: []
+  emit: []
+  emit2: []
+  rpgPrefab: 
+  weaponType: 0
 --- !u!114 &114397895917168178
 MonoBehaviour:
   m_ObjectHideFlags: 1

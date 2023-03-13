@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using COMIdleStage1;
 
-public class DestroyAfterTime : MonoBehaviour {
-public float time;
-	// Use this for initialization
-	void Start () {
+public class DestroyAfterTime : MonoBehaviour
+{
+	public float time;
+	
+	void Start()
+	{
 		StartCoroutine(dothe());
 	}
+
 	public IEnumerator dothe()
 	{
 		yield return new WaitForSeconds(time);
