@@ -30,7 +30,7 @@ public static Rect screenNoScaleRect(float left, float top, float width, float h
 
 public static GameObject LoadObject(string str)
 {
-	return Resources.Load(str) as GameObject;
+	return GameAsset.Load(str) as GameObject;
 }
 
 public static AnimationState GetAnimState(Animation anim, string str)

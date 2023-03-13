@@ -20,6 +20,8 @@ public class IdleThreeDeeButton : MonoBehaviour
 
 	public bool changeMat = true;
 
+	public int methodGroup = 1;
+
 	public void OnClicked()
 	{
 		StartCoroutine(click());
@@ -38,7 +40,7 @@ public class IdleThreeDeeButton : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 			if (repeatButton)
 			{
-				Game.RCInstance.SendMessage("Buttons", this.name);
+				Game.RCInstance.SendMessage("ButtonsGroup" + methodGroup, this.name);
 			}
 		}
 		if (changeMat)
@@ -47,7 +49,7 @@ public class IdleThreeDeeButton : MonoBehaviour
 		}
 		if (!repeatButton)
 		{
-			Game.RCInstance.SendMessage("Buttons", this.name);
+			Game.RCInstance.SendMessage("ButtonsGroup" + methodGroup, this.name);
 		}
 	}
 

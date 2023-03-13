@@ -41,7 +41,7 @@ public IEnumerator doLaser()
 	yield return new WaitForSeconds(0.03f);
     if (!GameObject.Find("Laser(Clone)"))
     {
-        GameObject objthe = Utilities.InsGobj(Resources.Load<GameObject>("Laser"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
+        GameObject objthe = Utilities.InsGobj(GameAsset.Load<GameObject>("Laser"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
         objthe.transform.Rotate(0f, 180f, 0f);
         objthe.transform.parent = weaponPoint;
         Game.RCInstance.EffectsCache.Add(objthe);
@@ -54,7 +54,7 @@ public void DoShot()
     switch(weapon.GetComponent<WeaponStats>().weaponType)
     {
         case WeaponStats.WeaponType.rpg:
-        GameObject objthe2 = Utilities.InsGobj(Resources.Load<GameObject>(weapon.GetComponent<WeaponStats>().rpgPrefab), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
+        GameObject objthe2 = Utilities.InsGobj(GameAsset.Load<GameObject>(weapon.GetComponent<WeaponStats>().rpgPrefab), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
         objthe2.transform.Rotate(new Vector3 (0f, 180f, 0f));
         Game.RCInstance.EffectsCache.Add(objthe2);
         if (!Global.mute)
@@ -71,8 +71,8 @@ public void DoShot()
         break;
         
         case WeaponStats.WeaponType.shotgun:
-        Game.RCInstance.EffectsCache.Add(Utilities.InsGobj(Resources.Load<GameObject>("Sparks"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity));
-        GameObject objthe = Utilities.InsGobj(Resources.Load<GameObject>("ShotGunFire"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
+        Game.RCInstance.EffectsCache.Add(Utilities.InsGobj(GameAsset.Load<GameObject>("Sparks"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity));
+        GameObject objthe = Utilities.InsGobj(GameAsset.Load<GameObject>("ShotGunFire"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
         objthe.transform.Rotate(0f, 180f, 0f);
         Game.RCInstance.EffectsCache.Add(objthe);
         if (!Global.mute)
@@ -84,18 +84,18 @@ public void DoShot()
         case WeaponStats.WeaponType.gatling:
         for (int i = 0; i < weapon.GetComponent<WeaponStats>().gatlingFirePoints.Length; i++)
         {
-            GameObject obj3 = Utilities.InsGobj(Resources.Load<GameObject>("Sparks"), weapon.GetComponent<WeaponStats>().gatlingFirePoints[0].position, Quaternion.identity);
+            GameObject obj3 = Utilities.InsGobj(GameAsset.Load<GameObject>("Sparks"), weapon.GetComponent<WeaponStats>().gatlingFirePoints[0].position, Quaternion.identity);
             obj3.transform.parent = this.transform;
             Game.RCInstance.EffectsCache.Add(obj3);
-            GameObject obj2 = Utilities.InsGobj(Resources.Load<GameObject>("FireLine"), weapon.GetComponent<WeaponStats>().gatlingFirePoints[i].position, Quaternion.identity);
+            GameObject obj2 = Utilities.InsGobj(GameAsset.Load<GameObject>("FireLine"), weapon.GetComponent<WeaponStats>().gatlingFirePoints[i].position, Quaternion.identity);
             obj2.transform.Rotate(new Vector3 (0f, 180f, 80f));
             Game.RCInstance.EffectsCache.Add(obj2);
         }
         break;
 
         case WeaponStats.WeaponType.normal:
-        Game.RCInstance.EffectsCache.Add(Utilities.InsGobj(Resources.Load<GameObject>("Sparks"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity));
-        GameObject obj = Utilities.InsGobj(Resources.Load<GameObject>("FireLine"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
+        Game.RCInstance.EffectsCache.Add(Utilities.InsGobj(GameAsset.Load<GameObject>("Sparks"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity));
+        GameObject obj = Utilities.InsGobj(GameAsset.Load<GameObject>("FireLine"), weapon.GetComponent<WeaponStats>().firePoint.position, Quaternion.identity);
         obj.transform.Rotate(new Vector3 (0f, 180f, 80f));
         Game.RCInstance.EffectsCache.Add(obj);
         break;

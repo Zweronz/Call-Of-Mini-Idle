@@ -8,4 +8,9 @@ public class Aughh : MonoBehaviour
 	{
 		GameObject.Find("3DUI").GetComponent<DisclaimerController>().DoTheLoad("menu");
 	}
+
+	public void bruh2()
+	{
+		GameObject.Find("3DUI").GetComponent<DisclaimerController>().DoTheLoad("funny");
+	}
 }

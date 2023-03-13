@@ -10,7 +10,7 @@ public void ChangeClip(string AC)
 	{
 		return;
 	}
-	StartCoroutine(FadeOut(Resources.Load<AudioClip>("music/" + AC)));
+	StartCoroutine(FadeOut(GameAsset.Load<AudioClip>("music/" + AC)));
 }
 
 public List<AudioSource> tempSources = new List<AudioSource>();

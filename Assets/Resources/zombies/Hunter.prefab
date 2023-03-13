@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RPS: 20
-  sound: {fileID: 8300000, guid: 642674f92fe5c40439a2aef2352e2182, type: 3}
+  sound: {fileID: 8300000, guid: 9f697e4994dbfa74bb3b6cb9fff951bc, type: 3}
   health: 800
   walkedUp: 0
   walkAnimName: Run
