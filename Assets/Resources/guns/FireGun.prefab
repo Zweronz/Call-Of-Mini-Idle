@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4878789561608692}
   - component: {fileID: 82261963088385956}
   - component: {fileID: 114823990845001496}
+  - component: {fileID: 114869698629676096}
   m_Layer: 0
   m_Name: FireGun
   m_TagString: Untagged
@@ -746,6 +747,17 @@ MonoBehaviour:
   - {fileID: 15489437710556616}
   rpgPrefab: 
   weaponType: 4
+--- !u!114 &114869698629676096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1219802921067036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137009720706510620
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

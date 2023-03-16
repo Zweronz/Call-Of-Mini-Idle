@@ -15,12 +15,12 @@ public class CamShake : MonoBehaviour
 
 	IEnumerator ShakeLoop()
 	{
-		for (;;)
+		while (true)
 		{
 			yield return new WaitForEndOfFrame();
 			if (shake)
 			{
-				for(;shake;)
+				while (shake)
 				{
 					yield return new WaitForEndOfFrame();
 					this.transform.position = new Vector3(this.transform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f), this.transform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f), this.transform.position.z + UnityEngine.Random.Range(-0.1f, 0.1f));

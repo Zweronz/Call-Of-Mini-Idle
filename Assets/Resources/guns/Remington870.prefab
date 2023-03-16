@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 4904882537565966}
   - component: {fileID: 82773268875289712}
   - component: {fileID: 114510751098378514}
+  - component: {fileID: 114298082854214750}
   m_Layer: 0
   m_Name: Remington870
   m_TagString: Untagged
@@ -283,6 +284,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114298082854214750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979606533091544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114510751098378514
 MonoBehaviour:
   m_ObjectHideFlags: 1

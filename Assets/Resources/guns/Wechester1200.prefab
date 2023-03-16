@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 4626990553997406}
   - component: {fileID: 82253756913776508}
   - component: {fileID: 114077457550713712}
+  - component: {fileID: 114745715012014758}
   m_Layer: 0
   m_Name: Wechester1200
   m_TagString: Untagged
@@ -410,6 +411,17 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 95eff8545c59d654f9578adb4954e4ed, type: 3}
   - {fileID: 2800000, guid: ee217eafd805b0d4cba10d5d0130b840, type: 3}
   texturePropertyName: _MainTex
+--- !u!114 &114745715012014758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288529150370062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114903571976657434
 MonoBehaviour:
   m_ObjectHideFlags: 1

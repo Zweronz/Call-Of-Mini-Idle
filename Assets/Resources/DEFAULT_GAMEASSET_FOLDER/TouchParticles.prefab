@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 199517710975390774}
   - component: {fileID: 114315655042088826}
   - component: {fileID: 82466731458490992}
+  - component: {fileID: 114867181226437526}
   m_Layer: 10
   m_Name: TouchParticles
   m_TagString: Untagged
@@ -135,6 +136,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0.5
+--- !u!114 &114867181226437526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091043839201072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198678040985965038
 ParticleSystem:
   m_ObjectHideFlags: 1

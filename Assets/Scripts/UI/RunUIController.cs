@@ -25,7 +25,7 @@ public class RunUIController : MonoBehaviour
 		Ray ray3 = GameObject.FindGameObjectWithTag("3DUI Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(ray3, out hit) && Input.GetMouseButtonDown(0))
 		{
-			if (hit.transform.GetComponent<IdleThreeDeeButton>())
+			if (hit.transform.GetComponent<IdleThreeDeeButton>() || hit.transform.GetComponent<IdleThreeDeeSlider>())
 			{
 				Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
 				hit.transform.SendMessage("OnClicked");

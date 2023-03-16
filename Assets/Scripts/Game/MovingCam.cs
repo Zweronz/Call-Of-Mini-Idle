@@ -10,8 +10,12 @@ public class MovingCam : MonoBehaviour
     public GameObject zombie;
     
     public Camera DetachedCam;
+
+    public Transform camShake;
     
     public Transform[] plusPointsPos;
+
+    private Vector3 startingPosition;
     
     public void Cycle()
     {

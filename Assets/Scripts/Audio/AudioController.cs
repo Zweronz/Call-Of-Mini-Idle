@@ -21,6 +21,7 @@ public class AudioController : MonoBehaviour
 		{
 			return;
 		}
+		volume *= (Global.currentVolume / 100f);
 		bool pitched = pitchRange != default(Vector2);
 		AudioSource newAS = new GameObject("AudioCon Temp Source").AddComponent<AudioSource>();
 		newAS.transform.parent = this.transform;

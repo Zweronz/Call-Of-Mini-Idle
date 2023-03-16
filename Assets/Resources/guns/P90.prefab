@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4452461377171224}
   - component: {fileID: 82630597540330222}
   - component: {fileID: 114348937664776592}
+  - component: {fileID: 114755480336703470}
   m_Layer: 0
   m_Name: P90
   m_TagString: Untagged
@@ -353,6 +354,17 @@ MonoBehaviour:
   emit2: []
   rpgPrefab: 
   weaponType: 0
+--- !u!114 &114755480336703470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071172334425558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137543691433047218
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

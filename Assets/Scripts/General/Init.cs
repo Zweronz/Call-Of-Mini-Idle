@@ -6,6 +6,11 @@ public class Init : MonoBehaviour
 {
 	private void Start()
 	{
+		if (PlayerPrefs.GetInt("setDefaultVolume") == 0)
+		{
+			Global.currentVolume = 100f;
+			PlayerPrefs.SetInt("setDefaultVolume", 1);
+		}
 		GameAsset.InitializeAssets();
 	}
 

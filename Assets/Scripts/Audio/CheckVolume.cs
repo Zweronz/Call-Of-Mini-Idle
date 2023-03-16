@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckIfMuteOrMusicMute : MonoBehaviour
+public class CheckVolume : MonoBehaviour
 {
 	void Update()
 	{
-		mSource.volume = Global.currentVolume / 100f;
-		if (Global.mute || Global.muteMusic)
-		{
-			mSource.enabled = false;
-		}
+		mSource.volume = Global.mute ? 0f : Global.currentVolume / 100f;
 	}
 
 	private AudioSource mSource;

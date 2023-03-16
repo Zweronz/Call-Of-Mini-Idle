@@ -36,4 +36,16 @@ public class Global : MonoBehaviour
 			Storager.SetInt("muteMusic", 0);
 		}
 	}
+
+	public static float currentVolume
+	{
+		get
+		{
+			return Storager.GetFloat("curVolume");
+		}
+		set
+		{
+			Storager.SetFloat("curVolume", value);
+		}
+	}
 }

@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 4996052608310382}
   - component: {fileID: 82618780501881688}
   - component: {fileID: 114564981955510760}
+  - component: {fileID: 114861457537626468}
   m_Layer: 0
   m_Name: M32
   m_TagString: Untagged
@@ -257,6 +258,17 @@ MonoBehaviour:
   emit2: []
   rpgPrefab: M32Tile
   weaponType: 6
+--- !u!114 &114861457537626468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143545138441850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9b4d49e897be48a4088eac858712d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137584744231260456
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

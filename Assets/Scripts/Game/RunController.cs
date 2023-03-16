@@ -6,37 +6,7 @@ using COMIdleStage1;
 
 public class RunController : MonoBehaviour
 {
-	public Texture theThing2;
-
 	public Transform deadZombieZone;
-
-	public Texture theThing;
-
-	public GUIStyle font;
-
-	public GUIStyle font2;
-
-	public GUIStyle button;
-
-	private float the = 100;
-
-	public GUIStyle settingsButton;
-
-	public GUIStyle plus;
-
-	public GUIStyle minus;
-
-	public GUIStyle arrowLeft;
-
-	public GUIStyle arrowRight;
-
-	public AudioClip buttonSound;
-
-	public AudioClip buySound;
-
-	private bool shopOpen;
-
-	public Texture bg;
 
 	public Container[] cons;
 	
@@ -44,15 +14,9 @@ public class RunController : MonoBehaviour
 
 	public MovingCam MC;
 
-	public Texture header;
-
-	private bool settingsOpen;
-
 	private bool shotgun;
 
 	private bool rpg;
-
-	public Texture testTexture;
 
 	public List<GameObject> EffectsCache = new List<GameObject>();
 
@@ -439,10 +403,8 @@ public class RunController : MonoBehaviour
 		}
 		if (justbought)
 		{
-			pbs2();
 			return;
 		}
-		pbs();
 	}
 
 	public void bc(string playerprefs, int cost)
@@ -458,10 +420,8 @@ public class RunController : MonoBehaviour
 		}
 		if (justbought)
 		{
-			pbs2();
 			return;
 		}
-		pbs();
 	}
 
 	public void bw(string playerprefs, string prefab, int cost)
@@ -481,10 +441,8 @@ public class RunController : MonoBehaviour
 		}
 		if (justbought)
 		{
-			pbs2();
 			return;
 		}
-		pbs();
 	}
 
 	public void bh(string playerprefs, string prefab, int cost)
@@ -501,10 +459,8 @@ public class RunController : MonoBehaviour
 		}
 		if (justbought && RunPoints >= cost)
 		{
-			pbs2();
 			return;
 		}
-		pbs();
 	}
 
 	public void ChangeMusic(string music)
@@ -545,6 +501,17 @@ public class RunController : MonoBehaviour
 	}
 
 	private string currentYesFunction;
+
+	public void SlidersGroup1(IdleThreeDeeSlider.SliderValue sliderValue)
+	{
+		switch (sliderValue.name)
+		{
+			case "VolumeSlider":
+			Global.currentVolume = sliderValue.value;
+			Game.RUCInstance.GetLabel("VolumeAmountText").text = "" + Math.Round(Global.currentVolume);
+			break;
+		}
+	}
 
 	public void ButtonsGroup2(string ButtonName)
 	{
@@ -1017,7 +984,7 @@ public class RunController : MonoBehaviour
 
 	public void doCamShake(float time)
 	{
-		if (MC.DetachedCam.GetComponent<CamShake>().shake)
+		if (MC.camShake.GetComponent<CamShake>().shake)
 		{
 			return;
 		}
@@ -1027,13 +994,13 @@ public class RunController : MonoBehaviour
 	public IEnumerator CamShake(float time)
 	{
 		float f = 0f;
-		MC.DetachedCam.GetComponent<CamShake>().shake = true;
+		MC.camShake.GetComponent<CamShake>().shake = true;
 		while (f < time)
 		{
 			yield return new WaitForEndOfFrame();
 			f += Time.deltaTime;
 		}
-		MC.DetachedCam.GetComponent<CamShake>().shake = false;
+		MC.camShake.GetComponent<CamShake>().shake = false;
 	}
 
 	public void doZombie(string str, bool start)
@@ -1115,6 +1082,7 @@ public class RunController : MonoBehaviour
 		doHuman(myHuman);
 		doGun(myGun);
 		audioCon.ChangeClip(CurrentMusic);
+		Game.RUCInstance.GetLabel("VolumeAmountText").text = "" + Math.Round(Global.currentVolume);
 	}
 
 	public void ZombieDeath()
@@ -1160,7 +1128,7 @@ public class RunController : MonoBehaviour
 		}
 		if (Input.GetKeyDown("b"))
 		{
-			MC.DetachedCam.GetComponent<CamShake>().shake = !MC.DetachedCam.GetComponent<CamShake>().shake;
+			MC.camShake.GetComponent<CamShake>().shake = !MC.camShake.GetComponent<CamShake>().shake;
 		}
 		#endif
 		if (GameObject.Find("Laser(Clone)") && MC.guy.GetComponent<HumanStats>().isLaser && !MC.guy.GetComponent<Animation>().IsPlaying("RunShoot01_Laser"))
@@ -1175,7 +1143,7 @@ public class RunController : MonoBehaviour
 			}
 			Destroy(GameObject.Find("Laser(Clone)"));
 		}
-		Game.RUCInstance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth)/ 100f, 1f, 1f);
+		Game.RUCInstance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 100f, 1f, 1f);
 		Game.RUCInstance.GetLabel("RPLabel").text = "" + Math.Round(RunPoints);
 		Game.RUCInstance.GetLabel("RPLabelShop").text = "" + Math.Round(RunPoints);
 		Game.RUCInstance.GetLabel("RPSLabel").text = "" + RunPointsPerSecond;
