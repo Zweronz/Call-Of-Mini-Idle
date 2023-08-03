@@ -122,16 +122,7 @@ public class RunController : MonoBehaviour
 		false,
 		false
 	};
-
-	public int[] shopIndex =
-	{
-		0,
-		0,
-		0,
-		0,
-		0
-	};
-
+	
 	public bool[] settingsBools =
 	{
 		false,
@@ -140,16 +131,6 @@ public class RunController : MonoBehaviour
 		false,
 		false
 	};
-
-	public void pbs()
-	{
-		//Game.ACInstance.PlayClip(buttonSound, new Vector2(0.98f, 1.02f));
-	}
-
-	public void pbs2()
-	{
-		//Game.ACInstance.PlayClip(buySound, new Vector2(0.98f, 1.02f));
-	}
 
 	public Camera curCamera()
 	{
@@ -626,6 +607,9 @@ public class RunController : MonoBehaviour
 			break;
 			case"MusicButton_DCBoss":
 			ChangeMusic("DinoCapBoss");
+			break;
+			case"MusicButton_AIMusic":
+			ChangeMusic("aigeneratedsong");
 			break;
 			case"SettingsButton_FirstPersonCam":
 			fpsCam = !fpsCam;

@@ -42,7 +42,7 @@ public class AudioController : MonoBehaviour
 			newAS.Play();
 			newAS.gameObject.AddComponent<AudioControllerChild>();
 			tempSources.Add(newAS);
-			while (newAS.volume < 1f)
+			while (newAS.volume < Global.currentVolume / 100f)
 			{
 				newAS.volume += Time.deltaTime;
 			}
@@ -51,7 +51,7 @@ public class AudioController : MonoBehaviour
 		if (APT == AudioPlayType.fadeOut)
 		{
 			newAS.clip = AC;
-			newAS.volume = 1f;
+			newAS.volume = Global.currentVolume / 100f;
 			newAS.Play();
 			newAS.gameObject.AddComponent<AudioControllerChild>();
 			tempSources.Add(newAS);
@@ -63,12 +63,24 @@ public class AudioController : MonoBehaviour
 		}
 	}
 
+	private bool fading;
+
+	void Update()
+	{
+		if (fading)
+		{
+			return;
+		}
+		GetComponent<AudioSource>().volume = Global.currentVolume / 100f;
+	}
+
 	public IEnumerator FadeOut(AudioClip AC)
 	{
 		if (Global.mute)
 		{
 			yield break;
 		}
+		fading = true;
 		if (GetComponent<AudioSource>().clip != null)
 		{
 		while (GetComponent<AudioSource>().volume > 0f)
@@ -79,10 +91,11 @@ public class AudioController : MonoBehaviour
 		}
 		GetComponent<AudioSource>().clip = AC;
 		GetComponent<AudioSource>().Play();
-		while (GetComponent<AudioSource>().volume < 1f)
+		while (GetComponent<AudioSource>().volume < Global.currentVolume / 100f)
 		{
 			yield return new WaitForSeconds(0.01f);
 			GetComponent<AudioSource>().volume += 0.03f;
 		}
+		fading = false;
 	}
 }

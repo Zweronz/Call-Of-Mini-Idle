@@ -12,6 +12,19 @@ public class DestroyAfterTime : MonoBehaviour
 		StartCoroutine(dothe());
 	}
 
+	void OnDisable()
+	{
+		try
+		{
+			Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+		}
+		catch
+		{
+			Debug.Log("unfound");
+		}
+		Destroy(base.gameObject);
+	}
+
 	public IEnumerator dothe()
 	{
 		yield return new WaitForSeconds(time);

@@ -12,12 +12,12 @@ public class MenuController : MonoBehaviour
 		{
 			if (hit.transform.GetComponent<ThreeDeeButton>())
 			{
-				Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
+				Global.InstantiateTouchParticles(hit);
 				hit.transform.SendMessage("OnClicked");
 			}
 			else
 			{
-				Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
+				Global.InstantiateTouchParticles(hit);
 			}
 		}
 	}

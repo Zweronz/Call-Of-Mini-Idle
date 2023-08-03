@@ -14,7 +14,7 @@ public class DisclaimerController : MonoBehaviour
 		Ray ray3 = GameObject.FindGameObjectWithTag("3DUI Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(ray3, out hit) && Input.GetMouseButtonDown(0) && !done)
 		{
-			Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
+			Global.InstantiateTouchParticles(hit);
 			GameObject.Find("DisclaimerUI").GetComponent<Animation>().Play((Application.loadedLevelName == "credits") ? "CreditsClose" :"DisclaimerEnd");
 			if (Application.loadedLevelName == "credits")
 			{

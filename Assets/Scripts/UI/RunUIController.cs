@@ -27,12 +27,12 @@ public class RunUIController : MonoBehaviour
 		{
 			if (hit.transform.GetComponent<IdleThreeDeeButton>() || hit.transform.GetComponent<IdleThreeDeeSlider>())
 			{
-				Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
+				Global.InstantiateTouchParticles(hit);
 				hit.transform.SendMessage("OnClicked");
 			}
 			else
 			{
-				Instantiate(GameAsset.Load<GameObject>("TouchParticles"), hit.transform).transform.position = hit.point;
+				Global.InstantiateTouchParticles(hit);
 			}
 		}
 	}
