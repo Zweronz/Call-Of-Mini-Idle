@@ -8,6 +8,8 @@ TagManager:
   - 3DUI Camera
   - LoadingUI
   - GlobalObject
+  - YScaled
+  - Positioned
   layers:
   - Default
   - TransparentFX

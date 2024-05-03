@@ -15,7 +15,7 @@ public class DisclaimerController : MonoBehaviour
 		if (Physics.Raycast(ray3, out hit) && Input.GetMouseButtonDown(0) && !done)
 		{
 			Global.InstantiateTouchParticles(hit);
-			GameObject.Find("DisclaimerUI").GetComponent<Animation>().Play((Application.loadedLevelName == "credits") ? "CreditsClose" :"DisclaimerEnd");
+			GameObject.Find("DisclaimerUI").GetComponent<Animation>().Play((Application.loadedLevelName == "credits") ? "CreditsClose" : "DisclaimerEnd");
 			if (Application.loadedLevelName == "credits")
 			{
 				LoadingUI.SetActive(false);

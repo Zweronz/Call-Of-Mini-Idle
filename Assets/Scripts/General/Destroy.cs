@@ -9,7 +9,7 @@ public class Destroy : MonoBehaviour
 	{
 		try
 		{
-			Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+			RunController.instance.EffectsCache.RemoveAt(RunController.instance.EffectsCache.IndexOf(base.gameObject));
 		}
 		catch
 		{

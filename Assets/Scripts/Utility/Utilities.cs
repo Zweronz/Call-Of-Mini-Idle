@@ -48,7 +48,7 @@ public class Utilities : MonoBehaviour
 	public static GameObject InsGobj(Object original)
 	{
 		GameObject gobj = Instantiate(original) as GameObject;
-		gobj.name.Replace("(Clone)", string.Empty);
+		gobj.name = gobj.name.Replace("(Clone)", string.Empty);
 		return gobj;
 	}
 
@@ -62,21 +62,21 @@ public class Utilities : MonoBehaviour
 	public static GameObject InsGobj(Object original, Transform parent, bool instantiateInWorldSpace)
 	{
 		GameObject gobj = Instantiate(original, parent, instantiateInWorldSpace) as GameObject;
-		gobj.name.Replace("(Clone)", string.Empty);
+		gobj.name = gobj.name.Replace("(Clone)", string.Empty);
 		return gobj;
 	}
 
 	public static GameObject InsGobj(Object original, Vector3 position, Quaternion rotation)
 	{
 		GameObject gobj = Instantiate(original, position, rotation) as GameObject;
-		gobj.name.Replace("(Clone)", string.Empty);
+		gobj.name = gobj.name.Replace("(Clone)", string.Empty);
 		return gobj;
 	}
 
 	public static GameObject InsGobj(Object original, Vector3 position, Quaternion rotation, Transform parent)
 	{
 		GameObject gobj = Instantiate(original, position, rotation, parent) as GameObject;
-		gobj.name.Replace("(Clone)", string.Empty);
+		gobj.name = gobj.name.Replace("(Clone)", string.Empty);
 		return gobj;
 	}
 

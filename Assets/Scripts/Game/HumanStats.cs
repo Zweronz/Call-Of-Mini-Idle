@@ -64,7 +64,7 @@ public class HumanStats : MonoBehaviour
                 Game.RCInstance.EffectsCache.Add(objthe2);
                 if (!Global.mute)
                 {
-                    Game.ACInstance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
+                    AudioController.instance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
                 }
             break;
 
@@ -82,7 +82,7 @@ public class HumanStats : MonoBehaviour
                 Game.RCInstance.EffectsCache.Add(objthe);
                 if (!Global.mute)
                 {
-                    Game.ACInstance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
+                    AudioController.instance.PlayClip(weapon.GetComponent<AudioSource>().clip, new Vector2(0.99f, 1.01f));
                 }
             break;
 

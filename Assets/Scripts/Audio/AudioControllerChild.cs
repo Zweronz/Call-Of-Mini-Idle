@@ -6,10 +6,25 @@ public class AudioControllerChild : MonoBehaviour
 {
 	void Update()
 	{
-		if (!GetComponent<AudioSource>().isPlaying || Global.mute)
+		if (!source.isPlaying || Global.mute)
 		{
-			transform.parent.GetComponent<AudioController>().tempSources.RemoveAt(transform.parent.GetComponent<AudioController>().tempSources.IndexOf(this.gameObject.GetComponent<AudioSource>()));
+			AudioController.instance.tempSources.Remove(source);
 			Destroy(gameObject);
 		}
 	}
+
+	private AudioSource source
+	{
+		get
+		{
+			if (_source == null)
+			{
+				_source = GetComponent<AudioSource>();
+			}
+
+			return _source;
+		}
+	}
+
+	private AudioSource _source;
 }

@@ -20,6 +20,8 @@ public class RunController : MonoBehaviour
 
 	public List<GameObject> EffectsCache = new List<GameObject>();
 
+	public static RunController instance;
+
 	public void ClearEffectsCache()
 	{
 		foreach (GameObject obj in EffectsCache)
@@ -301,7 +303,7 @@ public class RunController : MonoBehaviour
 
 	public GameObject SpawnPlusPoints()
 	{
-		GameObject obj = Utilities.InsGobj(GameAsset.Load<GameObject>("UITextPopup"), Game.RUCInstance.UILayers[0].transform);
+		GameObject obj = Utilities.InsGobj(GameAsset.Load<GameObject>("UITextPopup"), RunUIController.instance.UILayers[0].transform);
 		obj.transform.localPosition = new Vector3(UnityEngine.Random.Range(-27f, 50f), UnityEngine.Random.Range(-12f, -26f), -3.6f);
 		return obj;
 	}
@@ -455,17 +457,17 @@ public class RunController : MonoBehaviour
 
 	public void DoAPopup(string popupText, Vector2 textPosition)
 	{
-		Game.RUCInstance.UILayers[2].SetActive(true);
-		Game.RUCInstance.GetLabel("PopupUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
-		Game.RUCInstance.GetLabel("PopupUIText").text = popupText;
+		RunUIController.instance.UILayers[2].SetActive(true);
+		RunUIController.instance.GetLabel("PopupUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
+		RunUIController.instance.GetLabel("PopupUIText").text = popupText;
 	}
 
 	public void DoAYesNoPopup(string popupText, Vector2 textPosition, string yesFunction)
 	{
 		currentYesFunction = yesFunction;
-		Game.RUCInstance.UILayers[4].SetActive(true);
-		Game.RUCInstance.GetLabel("PopupYesNoUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
-		Game.RUCInstance.GetLabel("PopupYesNoUIText").text = popupText;
+		RunUIController.instance.UILayers[4].SetActive(true);
+		RunUIController.instance.GetLabel("PopupYesNoUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
+		RunUIController.instance.GetLabel("PopupYesNoUIText").text = popupText;
 	}
 
 	public void LoadBackToMenu()
@@ -478,7 +480,7 @@ public class RunController : MonoBehaviour
 			}
 		}
 		LoadingUI.LoadLevel("menu");
-		Game.RUCInstance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
+		RunUIController.instance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
 	}
 
 	private string currentYesFunction;
@@ -489,14 +491,14 @@ public class RunController : MonoBehaviour
 		{
 			case "VolumeSlider":
 			Global.currentVolume = sliderValue.value;
-			Game.RUCInstance.GetLabel("VolumeAmountText").text = "" + Math.Round(Global.currentVolume);
+			RunUIController.instance.GetLabel("VolumeAmountText").text = "" + Math.Round(Global.currentVolume);
 			break;
 		}
 	}
 
 	public void ButtonsGroup2(string ButtonName)
 	{
-		if (Game.RUCInstance.UILayers[2].activeInHierarchy && ButtonName != "PopupButton_OK" || Game.RUCInstance.UILayers[4].activeInHierarchy && ButtonName != "PopupButton_Yes" && ButtonName != "PopupButton_No")
+		if (RunUIController.instance.UILayers[2].activeInHierarchy && ButtonName != "PopupButton_OK" || RunUIController.instance.UILayers[4].activeInHierarchy && ButtonName != "PopupButton_Yes" && ButtonName != "PopupButton_No")
 		{
 			return;
 		}
@@ -508,34 +510,34 @@ public class RunController : MonoBehaviour
 
 	public void ButtonsGroup1(string ButtonName)
 	{
-		if (Game.RUCInstance.UILayers[2].activeInHierarchy && ButtonName != "PopupButton_OK" || Game.RUCInstance.UILayers[4].activeInHierarchy && ButtonName != "PopupButton_Yes" && ButtonName != "PopupButton_No")
+		if (RunUIController.instance.UILayers[2].activeInHierarchy && ButtonName != "PopupButton_OK" || RunUIController.instance.UILayers[4].activeInHierarchy && ButtonName != "PopupButton_Yes" && ButtonName != "PopupButton_No")
 		{
 			return;
 		}
 		switch (ButtonName)
 		{
 			case"PopupButton_OK":
-			Game.RUCInstance.UILayers[2].SetActive(false);
+			RunUIController.instance.UILayers[2].SetActive(false);
 			break;
 			case"PopupButton_Yes":
 			this.SendMessage(currentYesFunction);
 			break;
 			case"PopupButton_No":
-			Game.RUCInstance.UILayers[4].SetActive(false);
+			RunUIController.instance.UILayers[4].SetActive(false);
 			break;
 			case"BackToMenu":
 			DoAYesNoPopup("Would you like to return to the menu?", new Vector2(-0.9f, -19.4f), "LoadBackToMenu");
 			break;
 			case"Settings":
-			Game.RUCInstance.UILayers[3].SetActive(true);
-			Game.RUCInstance.UILayers[0].SetActive(false);
+			RunUIController.instance.UILayers[3].SetActive(true);
+			RunUIController.instance.UILayers[0].SetActive(false);
 			break;
 			case"SettingsButton_Back":
-			Game.RUCInstance.UILayers[0].SetActive(true);
-			Game.RUCInstance.UILayers[3].SetActive(false);
+			RunUIController.instance.UILayers[0].SetActive(true);
+			RunUIController.instance.UILayers[3].SetActive(false);
 			break;
 			case"SettingsButton_Music":
-			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
+			foreach (GameObject obj in RunUIController.instance.SettingsUILayers)
 			{
 				if (obj.name == "MusicTab")
 				{
@@ -548,7 +550,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"SettingsButton_Video":
-			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
+			foreach (GameObject obj in RunUIController.instance.SettingsUILayers)
 			{
 				if (obj.name == "VideoTab")
 				{
@@ -561,7 +563,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"SettingsButton_Audio":
-			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
+			foreach (GameObject obj in RunUIController.instance.SettingsUILayers)
 			{
 				if (obj.name == "AudioTab")
 				{
@@ -574,7 +576,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"SettingsButton_General":
-			foreach (GameObject obj in Game.RUCInstance.SettingsUILayers)
+			foreach (GameObject obj in RunUIController.instance.SettingsUILayers)
 			{
 				if (obj.name == "GeneralTab")
 				{
@@ -588,7 +590,7 @@ public class RunController : MonoBehaviour
 			break;
 			case"GeneralButton_Credits":
 			LoadingUI.LoadLevel("credits");
-			Game.RUCInstance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
+			RunUIController.instance.UILayers[0].transform.parent.parent.gameObject.SetActive(false);
 			break;
 			case"MusicButton_COMZBGM1":
 			ChangeMusic("BGM1");
@@ -627,7 +629,7 @@ public class RunController : MonoBehaviour
 			Global.mute = !Global.mute;
 			if (Global.mute)
 			{
-				Game.ACInstance.GetComponent<AudioSource>().clip = null;
+				AudioController.instance.GetComponent<AudioSource>().clip = null;
 			}
 			else
 			{
@@ -638,7 +640,7 @@ public class RunController : MonoBehaviour
 			Global.muteMusic = !Global.muteMusic;
 			if (Global.muteMusic)
 			{
-				Game.ACInstance.GetComponent<AudioSource>().clip = null;
+				AudioController.instance.GetComponent<AudioSource>().clip = null;
 			}
 			else
 			{
@@ -646,7 +648,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"ShopButton_Prestige":
-			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			foreach (GameObject obj in RunUIController.instance.ShopUILayers)
 			{
 				if (obj.name == "PrestigeShop")
 				{
@@ -659,7 +661,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"ShopButton_Upgrades":
-			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			foreach (GameObject obj in RunUIController.instance.ShopUILayers)
 			{
 				if (obj.name == "UpgradeShop")
 				{
@@ -770,15 +772,15 @@ public class RunController : MonoBehaviour
 			bw("pgm", "Missle", 120000);
 			break;
 			case"Shop":
-			Game.RUCInstance.UILayers[1].SetActive(true);
-			Game.RUCInstance.UILayers[0].SetActive(false);
+			RunUIController.instance.UILayers[1].SetActive(true);
+			RunUIController.instance.UILayers[0].SetActive(false);
 			break;
 			case"ShopButton_Back":
-			Game.RUCInstance.UILayers[0].SetActive(true);
-			Game.RUCInstance.UILayers[1].SetActive(false);
+			RunUIController.instance.UILayers[0].SetActive(true);
+			RunUIController.instance.UILayers[1].SetActive(false);
 			break;
 			case"ShopButton_Zombies":
-			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			foreach (GameObject obj in RunUIController.instance.ShopUILayers)
 			{
 				if (obj.name == "ZombieShop")
 				{
@@ -791,7 +793,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"ShopButton_Avatars":
-			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			foreach (GameObject obj in RunUIController.instance.ShopUILayers)
 			{
 				if (obj.name == "AvatarShop")
 				{
@@ -804,7 +806,7 @@ public class RunController : MonoBehaviour
 			}
 			break;
 			case"ShopButton_Weapons":
-			foreach (GameObject obj in Game.RUCInstance.ShopUILayers)
+			foreach (GameObject obj in RunUIController.instance.ShopUILayers)
 			{
 				if (obj.name == "WeaponShop")
 				{
@@ -1001,7 +1003,7 @@ public class RunController : MonoBehaviour
 		{
 			CurrentZombieHealth = GameAsset.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().health;
 		}
-		Game.ACInstance.PlayClip(GameAsset.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().sound, new Vector2(0.9f, 1.1f));
+		AudioController.instance.PlayClip(GameAsset.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().sound, new Vector2(0.9f, 1.1f));
 	}
 
 	public void doMyZombie(bool start)
@@ -1018,7 +1020,7 @@ public class RunController : MonoBehaviour
 		{
 			CurrentZombieHealth = GameAsset.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().health;
 		}
-		Game.ACInstance.PlayClip(GameAsset.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().sound, new Vector2(0.9f, 1.1f));
+		AudioController.instance.PlayClip(GameAsset.Load<GameObject>("zombies/" + str).GetComponent<ZombieStats>().sound, new Vector2(0.9f, 1.1f));
 	}
 
 	public void doHuman(string str)
@@ -1039,6 +1041,11 @@ public class RunController : MonoBehaviour
 		myGun = str;
 		Destroy(MC.guy.GetComponent<HumanStats>().weapon);
 		MC.guy.GetComponent<HumanStats>().weapon = Instantiate(GameAsset.Load<GameObject>("guns/" + str), MC.guy.GetComponent<HumanStats>().weaponPoint);
+	}
+
+	void Awake()
+	{
+		instance = this;
 	}
 
 	void Start()
@@ -1066,7 +1073,7 @@ public class RunController : MonoBehaviour
 		doHuman(myHuman);
 		doGun(myGun);
 		audioCon.ChangeClip(CurrentMusic);
-		Game.RUCInstance.GetLabel("VolumeAmountText").text = "" + Math.Round(Global.currentVolume);
+		RunUIController.instance.GetLabel("VolumeAmountText").text = "" + Math.Round(Global.currentVolume);
 	}
 
 	public void ZombieDeath()
@@ -1119,7 +1126,7 @@ public class RunController : MonoBehaviour
 		{
 			try
 			{
-				Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(GameObject.Find("Laser(Clone)")));
+				RunController.instance.EffectsCache.RemoveAt(RunController.instance.EffectsCache.IndexOf(GameObject.Find("Laser(Clone)")));
 			}
 			catch
 			{
@@ -1127,11 +1134,11 @@ public class RunController : MonoBehaviour
 			}
 			Destroy(GameObject.Find("Laser(Clone)"));
 		}
-		Game.RUCInstance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 100f, 1f, 1f);
-		Game.RUCInstance.GetLabel("RPLabel").text = "" + Math.Round(RunPoints);
-		Game.RUCInstance.GetLabel("RPLabelShop").text = "" + Math.Round(RunPoints);
-		Game.RUCInstance.GetLabel("RPSLabel").text = "" + RunPointsPerSecond;
-		Game.RUCInstance.GetLabel("FOVAmountText").text = "" + FOV;
+		RunUIController.instance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 100f, 1f, 1f);
+		RunUIController.instance.GetLabel("RPLabel").text = "" + Math.Round(RunPoints);
+		RunUIController.instance.GetLabel("RPLabelShop").text = "" + Math.Round(RunPoints);
+		RunUIController.instance.GetLabel("RPSLabel").text = "" + RunPointsPerSecond;
+		RunUIController.instance.GetLabel("FOVAmountText").text = "" + FOV;
 		if (CurrentZombieHealth == 0f)
 		{
 			ZombieDeath();

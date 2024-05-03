@@ -15,15 +15,16 @@ public class StepSound : MonoBehaviour
 	
 	public void Step()
 	{
-		Game.ACInstance.PlayClip(stepSound, new Vector2(0.9f, 1.1f), AudioPlayType.normal, volume);
+		AudioController.instance.PlayClip(stepSound, new Vector2(0.9f, 1.1f), AudioPlayType.Normal, volume);
+
 		if (tank)
 		{
 			if (eliteTank)
 			{
-				Game.RCInstance.doCamShake(0.07f);
+				RunController.instance.doCamShake(0.07f);
 				return;
 			}
-			Game.RCInstance.doCamShake(0.05f);
+			RunController.instance.doCamShake(0.05f);
 		}
 	}
 }

@@ -1,8 +1,8 @@
 ﻿public enum AudioPlayType
 {
-	normal = 0,
+	Normal = 0,
 
-	fadeIn = 2,
+	FadeIn = 2,
 
-	fadeOut = 3
+	FadeOut = 3
 };

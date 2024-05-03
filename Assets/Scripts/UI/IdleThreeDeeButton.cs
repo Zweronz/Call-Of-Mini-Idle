@@ -26,7 +26,7 @@ public class IdleThreeDeeButton : MonoBehaviour
 
 	IEnumerator click()
 	{
-		Game.ACInstance.PlayClip(pressSound, new Vector2(0.99f, 1.01f));
+		AudioController.instance.PlayClip(pressSound, new Vector2(0.99f, 1.01f));
 		Material mat = GetComponent<MeshRenderer>().material;
 		if (changeMat)
 		{
@@ -37,7 +37,7 @@ public class IdleThreeDeeButton : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 			if (repeatButton)
 			{
-				Game.RCInstance.SendMessage("ButtonsGroup" + methodGroup, this.name);
+				RunController.instance.SendMessage("ButtonsGroup" + methodGroup, this.name);
 			}
 		}
 		if (changeMat)
@@ -46,7 +46,7 @@ public class IdleThreeDeeButton : MonoBehaviour
 		}
 		if (!repeatButton)
 		{
-			Game.RCInstance.SendMessage("ButtonsGroup" + methodGroup, this.name);
+			RunController.instance.SendMessage("ButtonsGroup" + methodGroup, this.name);
 		}
 	}
 

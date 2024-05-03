@@ -6,17 +6,14 @@ public class CheckIfMute : MonoBehaviour
 {
 	void Update()
 	{
-		mSource.volume = Global.currentVolume / 100f;
-		if (Global.mute)
-		{
-			mSource.enabled = false;
-		}
+		source.volume = Global.currentVolume / 100f;
+		source.enabled = !Global.mute;
 	}
 
-	private AudioSource mSource;
+	private AudioSource source;
 
 	void Start()
 	{
-		mSource = GetComponent<AudioSource>();
+		source = GetComponent<AudioSource>();
 	}
 }

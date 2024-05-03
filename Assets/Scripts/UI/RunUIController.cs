@@ -14,9 +14,16 @@ public class RunUIController : MonoBehaviour
 
 	public GameObject EnemyHealthBar;
 
+	public static RunUIController instance;
+
 	public TextMesh GetLabel(string name)
 	{
 		return labels.Find(x => x.name == name);
+	}
+
+	void Awake()
+	{
+		instance = this;
 	}
 
 	void Update()

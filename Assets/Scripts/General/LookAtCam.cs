@@ -7,6 +7,6 @@ public class LookAtCam : MonoBehaviour
 {
 	void Update()
 	{
-		this.transform.LookAt(Game.RCInstance.curCamera().transform);
+		this.transform.LookAt(RunController.instance.curCamera().transform);
 	}
 }

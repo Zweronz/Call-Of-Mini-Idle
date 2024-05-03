@@ -19,7 +19,7 @@ public class MovingCam : MonoBehaviour
     
     public void Cycle()
     {
-        Game.RCInstance.LevelCycle();
-        Game.RCInstance.ClearEffectsCache();
+        RunController.instance.LevelCycle();
+        RunController.instance.ClearEffectsCache();
     }
 }

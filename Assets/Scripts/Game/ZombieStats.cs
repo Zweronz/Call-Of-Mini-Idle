@@ -32,7 +32,7 @@ public class ZombieStats : MonoBehaviour
     {
         if (isDead && !GetComponent<Animation>().IsPlaying("Death01"))
         {
-            Game.RCInstance.ZombieAgain();
+            RunController.instance.ZombieAgain();
         }
         if (!walkedUp && !GetComponent<Animation>().IsPlaying("WalkUp"))
         {

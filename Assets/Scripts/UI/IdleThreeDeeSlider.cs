@@ -30,7 +30,7 @@ public class IdleThreeDeeSlider : MonoBehaviour
     public void OnClicked()
     {
 		transform.GetComponent<MeshRenderer>().material = handlePressedMat;
-		Game.ACInstance.PlayClip(pressSound);
+		AudioController.instance.PlayClip(pressSound);
         StartCoroutine(Drag());
     }
 
@@ -45,7 +45,7 @@ public class IdleThreeDeeSlider : MonoBehaviour
 			transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x + ((Input.mousePosition.x - mouseDelta) / 500f), bounds.x, bounds.y), transform.localPosition.y, transform.localPosition.z);
 			mouseDelta = Input.mousePosition.x;
             currentValue = (Utilities.Percentage(transform.localPosition.x - bounds.x, bounds.y - bounds.x));
-			Game.RCInstance.SendMessage("SlidersGroup" + methodGroup, new SliderValue(this.name, this.currentValue));
+			RunController.instance.SendMessage("SlidersGroup" + methodGroup, new SliderValue(this.name, this.currentValue));
         }
 		if (Input.GetMouseButtonUp(0))
         {

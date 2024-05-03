@@ -6,13 +6,13 @@ public class CheckVolume : MonoBehaviour
 {
 	void Update()
 	{
-		mSource.volume = Global.mute ? 0f : Global.currentVolume / 100f;
+		source.volume = Global.mute ? 0f : Global.currentVolume / 100f;
 	}
 
-	private AudioSource mSource;
+	private AudioSource source;
 
 	void Start()
 	{
-		mSource = GetComponent<AudioSource>();
+		source = GetComponent<AudioSource>();
 	}
 }

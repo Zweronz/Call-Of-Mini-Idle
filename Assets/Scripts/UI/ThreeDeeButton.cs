@@ -24,7 +24,7 @@ public class ThreeDeeButton : MonoBehaviour
 
 	IEnumerator click()
 	{
-		Game.ACInstance.PlayClip(pressSound, new Vector2(0.99f, 1.01f));
+		AudioController.instance.PlayClip(pressSound, new Vector2(0.99f, 1.01f));
 		Material mat = GetComponent<MeshRenderer>().material;
 		GetComponent<MeshRenderer>().material = pressedMat;
 		while (Input.GetMouseButton(0))

@@ -16,7 +16,7 @@ public class DestroyAfterTime : MonoBehaviour
 	{
 		try
 		{
-			Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+			RunController.instance.EffectsCache.RemoveAt(RunController.instance.EffectsCache.IndexOf(base.gameObject));
 		}
 		catch
 		{
@@ -30,7 +30,7 @@ public class DestroyAfterTime : MonoBehaviour
 		yield return new WaitForSeconds(time);
 		try
 		{
-			Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+			RunController.instance.EffectsCache.RemoveAt(RunController.instance.EffectsCache.IndexOf(base.gameObject));
 		}
 		catch
 		{

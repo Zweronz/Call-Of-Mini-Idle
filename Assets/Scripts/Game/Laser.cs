@@ -21,7 +21,7 @@ public class Laser : MonoBehaviour
 			newScale.z = Vector3.Distance(hit.point, this.transform.position) / 44f;
 			GameObject obj = Instantiate(GameAsset.Load<GameObject>("zombile3d_laser"), new Vector3(hit.point.x + 0.7f, hit.point.y, hit.point.z), Quaternion.identity);
 			obj.transform.parent = hit.transform;
-			Game.RCInstance.EffectsCache.Add(obj);
+			RunController.instance.EffectsCache.Add(obj);
 		}
 	}
 
@@ -34,7 +34,7 @@ public class Laser : MonoBehaviour
 			newScale.z = Vector3.Distance(hit.point, this.transform.position) / 44f;
 			GameObject obj = Instantiate(GameAsset.Load<GameObject>("zombile3d_laser"), new Vector3(hit.point.x + 0.7f, hit.point.y, hit.point.z), Quaternion.identity);
 			obj.transform.parent = hit.transform;
-			Game.RCInstance.EffectsCache.Add(obj);
+			RunController.instance.EffectsCache.Add(obj);
 		}
 	}
 }

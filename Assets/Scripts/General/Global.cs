@@ -52,7 +52,7 @@ public class Global : MonoBehaviour
 	{
 		get
 		{
-			if (GameObject.FindGameObjectWithTag("GlobalObject") ==  null)
+			if (GameObject.FindGameObjectWithTag("GlobalObject") == null)
 			{
 				_instance = CreateGlobal();
 			}

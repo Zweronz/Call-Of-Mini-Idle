@@ -33,14 +33,14 @@ public class bullet : MonoBehaviour
             switch(bulletType)
             {
                 case BulletType.normal:
-                Game.RCInstance.EffectsCache.Add(Utilities.InsGobj(GameAsset.Load<GameObject>("Sparks"), tip.position, Quaternion.identity));
+                RunController.instance.EffectsCache.Add(Utilities.InsGobj(GameAsset.Load<GameObject>("Sparks"), tip.position, Quaternion.identity));
                 RemoveSelfNoWait();
                 break;
 
                 case BulletType.rocket:
-                Game.RCInstance.EffectsCache.Add(Utilities.InsGobj(GameAsset.Load<GameObject>("RPG_EXP"), tip.position, Quaternion.identity));
-                Game.RCInstance.doCamShake(0.1f);
-                Game.RCInstance.Shoot();
+                RunController.instance.EffectsCache.Add(Utilities.InsGobj(GameAsset.Load<GameObject>("RPG_EXP"), tip.position, Quaternion.identity));
+                RunController.instance.doCamShake(0.1f);
+                RunController.instance.Shoot();
                 RemoveSelfNoWait();
                 break;
             }
@@ -51,7 +51,7 @@ public class bullet : MonoBehaviour
     {
         try
 	    {
-	    	Game.RCInstance.EffectsCache.RemoveAt(Game.RCInstance.EffectsCache.IndexOf(base.gameObject));
+	    	RunController.instance.EffectsCache.RemoveAt(RunController.instance.EffectsCache.IndexOf(base.gameObject));
 	    }
 	    catch
 	    {

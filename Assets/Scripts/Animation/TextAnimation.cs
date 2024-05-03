@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(TextMesh))]
 public class TextAnimation : MonoBehaviour
 {
-	private IEnumerator animationLoop()
+	private IEnumerator AnimationLoop()
 	{
 		for (;;)
 		{
@@ -24,15 +24,17 @@ public class TextAnimation : MonoBehaviour
 				animationIndex++;
 			}
 			GetComponent<AudioSource>().PlayOneShot(frameSound);
-			GetComponent<TextMesh>().text = addTo ? GetComponent<TextMesh>().text + frames[animationIndex]  : frames[animationIndex];
+			textMesh.text = addTo ? textMesh.text + frames[animationIndex]  : frames[animationIndex];
 		}
 	}
 
 	private void Start()
 	{
-		GetComponent<TextMesh>().text = frames[animationIndex];
-		StartCoroutine(animationLoop());
+		(textMesh = GetComponent<TextMesh>()).text = frames[animationIndex];
+		StartCoroutine(AnimationLoop());
 	}
+
+	private TextMesh textMesh;
 
 	private int animationIndex;
 
