@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4570039033849808}
   - component: {fileID: 111611697060938060}
   - component: {fileID: 114782062387978768}
+  - component: {fileID: 114457707253126822}
   m_Layer: 10
   m_Name: UITextPopup
-  m_TagString: Untagged
+  m_TagString: YScaled
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4948379050597386}
   - component: {fileID: 23504845048356332}
   - component: {fileID: 102018743715269192}
+  - component: {fileID: 114401417124317324}
   m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
@@ -142,6 +144,29 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114401417124317324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384496119980298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85cf166b7f168d4cb208d4606b7b5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeInSeconds: 0.75
+--- !u!114 &114457707253126822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187176767987598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2137b33f9dbd6646a0c996577a4f666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114782062387978768
 MonoBehaviour:
   m_ObjectHideFlags: 1

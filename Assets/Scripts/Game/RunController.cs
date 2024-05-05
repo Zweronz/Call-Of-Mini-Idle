@@ -458,7 +458,7 @@ public class RunController : MonoBehaviour
 	public void DoAPopup(string popupText, Vector2 textPosition)
 	{
 		RunUIController.instance.UILayers[2].SetActive(true);
-		RunUIController.instance.GetLabel("PopupUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
+		RunUIController.instance.GetLabel("PopupUIText").transform.localPosition = new Vector3(textPosition.x - 5, 5, textPosition.y + 16);
 		RunUIController.instance.GetLabel("PopupUIText").text = popupText;
 	}
 
@@ -466,7 +466,7 @@ public class RunController : MonoBehaviour
 	{
 		currentYesFunction = yesFunction;
 		RunUIController.instance.UILayers[4].SetActive(true);
-		RunUIController.instance.GetLabel("PopupYesNoUIText").transform.localPosition = new Vector3(textPosition.x, textPosition.y, -12.37f);
+		RunUIController.instance.GetLabel("PopupYesNoUIText").transform.localPosition = new Vector3(textPosition.x - 3.5f, 5, textPosition.y + 18);
 		RunUIController.instance.GetLabel("PopupYesNoUIText").text = popupText;
 	}
 
@@ -1134,7 +1134,7 @@ public class RunController : MonoBehaviour
 			}
 			Destroy(GameObject.Find("Laser(Clone)"));
 		}
-		RunUIController.instance.EnemyHealthBar.transform.localScale = new Vector3(Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 100f, 1f, 1f);
+		RunUIController.instance.EnemyHealthBar.SetFloat("_Amount", Mathf.Lerp(0.08f, 0.95f, Utilities.Percentage(CurrentZombieHealth, MaximumZombieHealth) / 100f));
 		RunUIController.instance.GetLabel("RPLabel").text = "" + Math.Round(RunPoints);
 		RunUIController.instance.GetLabel("RPLabelShop").text = "" + Math.Round(RunPoints);
 		RunUIController.instance.GetLabel("RPSLabel").text = "" + RunPointsPerSecond;

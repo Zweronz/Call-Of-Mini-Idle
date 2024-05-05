@@ -12,7 +12,7 @@ public class RunUIController : MonoBehaviour
 
 	public GameObject[] SettingsUILayers;
 
-	public GameObject EnemyHealthBar;
+	public Material EnemyHealthBar;
 
 	public static RunUIController instance;
 

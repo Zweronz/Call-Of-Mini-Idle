@@ -10,6 +10,8 @@ TagManager:
   - GlobalObject
   - YScaled
   - Positioned
+  - TopAnchor
+  - BottomAnchor
   layers:
   - Default
   - TransparentFX
