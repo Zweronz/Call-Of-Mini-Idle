@@ -52,6 +52,10 @@ public class HumanStats : MonoBehaviour
             Game.RCInstance.EffectsCache.Add(objthe);
         }
     }
+
+    //iiiiiiiiiiiiiiiiiiiiiii wanna dieeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    //this aint the way it's s-posed to be!
+    //it's not qualityyyyy!!!!
     public void DoShot()
     {
         if(!isRPG)
